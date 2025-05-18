@@ -1,4 +1,4 @@
-# Custom Resume - .NET 9 Blazor WASM Portfolio Website
+# Personal Portfolio - .NET 9 Blazor WASM Portfolio Website
 
 ![Build Status](https://github.com/Andrick-Mercado/PortfolioV2/actions/workflows/deploy-blazor-wasm-to-github-pages.yml/badge.svg)
 [![GitHub issues](https://img.shields.io/github/issues/Andrick-Mercado/PortfolioV2)](https://github.com/Andrick-Mercado/PortfolioV2/issues)
