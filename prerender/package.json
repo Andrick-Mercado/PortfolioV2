@@ -5,9 +5,6 @@
             "collapseWhitespace": true,
             "removeComments": true
         },
-        "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
-        "browserslist": [
-            "> 0.01%"
-        ]
+        "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
     }
 }
