@@ -5,7 +5,7 @@ using PersonalPortfolio.Library.Infrastructure.Repo;
 
 namespace PersonalPortfolio.Library;
 
-public static class ServiceCollectionExtensions
+public static class DependencyInjection
 {
     public static async Task<IServiceCollection> AddBlazorLibraryAsync(this IServiceCollection services, string baseAddress)
     {
