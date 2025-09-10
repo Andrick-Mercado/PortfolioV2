@@ -52,6 +52,8 @@ jobs:
         run: |
           find . -name "*.html" | while read htmlFile; do
               sed -i 's/<base href="\/"/<base href="\/${{ env.REPO_NAME }}\/"/g' $htmlFile
+              sed -i 's/mud-drawer-close-responsive-md-left/mud-drawer-open-responsive-md-left/g' $htmlFile
+              sed -i 's/mud-drawer--closed/mud-drawer--open/g' $htmlFile
           done
 
       # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
