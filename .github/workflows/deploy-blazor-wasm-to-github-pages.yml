@@ -28,9 +28,9 @@ jobs:
         run: dotnet publish src/PersonalPortfolio.Blazor/PersonalPortfolio.Blazor.csproj -c Release -o prerender/output --nologo
 
       # Use NodeJS react-snap utitility to prerender static website
-      - name: prerender Blazor client
-        working-directory: prerender
-        run: npx react-snap
+#      - name: prerender Blazor client
+#        working-directory: prerender
+#        run: npx react-snap
 
       # Extract repo name from GITHUB_REPOSITORY environment variable
       - name: Extract repo name
