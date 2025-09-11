@@ -42,6 +42,7 @@ public class WebsiteData
 {
     public MainPage MainPage { get; set; }
     public List<OtherPages> OtherPages { get; set; }
+    public WeddingInvitation WeddingInvitation { get; set; }
 }
 
 public class MainPage
@@ -83,6 +84,27 @@ public class Card
     public string ImageUrl { get; set; }
     public string EmbedUrl { get; set; }
     public string LearnMoreUrl { get; set; }
+}
+
+public class WeddingInvitation
+{
+    public string HeroBackgroundImage { get; set; }
+    public string CoupleNames { get; set; }
+    public string DateText { get; set; }
+    public string Subtitle { get; set; }
+    public string ScrollIndicatorText { get; set; }
+    public List<WeddingSection> Sections { get; set; }
+    public string FooterText { get; set; }
+}
+
+public class WeddingSection
+{
+    public bool AltStyle { get; set; }
+    public bool Reverse { get; set; }
+    public string Image { get; set; }
+    public string ImageAlt { get; set; }
+    public string Title { get; set; }
+    public List<string> Paragraphs { get; set; }
 }
 
 #region Enums
