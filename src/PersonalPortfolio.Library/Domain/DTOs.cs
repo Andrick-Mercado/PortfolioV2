@@ -48,12 +48,16 @@ public class MainPage
 {
     public string Name { get; set; }
     public string Title { get; set; }
+    public string Headline { get; set; }
+    public string Tagline { get; set; }
+    public string Location { get; set; }
     public string ImageRoute { get; set; }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public Icon Icon { get; set; }
 
     public List<string> Paragraphs { get; set; }
+    public List<string> Highlights { get; set; } = [];
 }
 
 public class OtherPages
@@ -75,6 +79,8 @@ public class Card
 {
     public string Name { get; set; }
     public string Title { get; set; }
+    public string Subtitle { get; set; }
+    public string Period { get; set; }
     public string Body { get; set; }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
@@ -83,6 +89,7 @@ public class Card
     public string ImageUrl { get; set; }
     public string EmbedUrl { get; set; }
     public string LearnMoreUrl { get; set; }
+    public List<string> Tags { get; set; } = [];
 }
 
 #region Enums
@@ -95,7 +102,6 @@ public enum WebsiteTheme
 
 public enum CardType
 {
-    Skill,
     Experience,
     Education,
     Project,
@@ -108,7 +114,17 @@ public enum Icon
     Lightbulb,
     Construction,
     AutoGraph,
-    InsertDriveFile
+    InsertDriveFile,
+    Work,
+    School,
+    Code,
+    SportsEsports,
+    Cloud,
+    Storage,
+    Groups,
+    Terminal,
+    Web,
+    RocketLaunch
 }
 
 #endregion

@@ -1,34 +1,98 @@
-﻿@if (_hasLoaded)
+﻿@using PersonalPortfolio.Library.Domain.Mappers
+
+@if (_hasLoaded)
 {
     <PageTitle>@_mainPage?.Title</PageTitle>
 
-    <MudGrid Class="d-flex justify-center">
-        <MudItem>
-            <MudImage ObjectFit="ObjectFit.Fill" Height="250" Width="200" Src="@_mainPage?.ImageRoute" Alt="Headshot" Elevation="25" Class="rounded-lg"/>
-        </MudItem>
-        <MudItem>
-            <MudText Typo="Typo.h3" GutterBottom="true">@_mainPage?.Title</MudText>
+    <MudContainer MaxWidth="MaxWidth.Medium">
+
+        <!-- Hero section -->
+        <MudGrid Class="align-center" Spacing="6">
+            <MudItem xs="12" sm="4" Class="d-flex justify-center">
+                <MudAvatar Style="height:220px; width:220px; font-size:2rem;" Elevation="4">
+                    <MudImage Src="@_mainPage?.ImageRoute" Alt="Headshot" ObjectFit="ObjectFit.Cover" Style="height:100%; width:100%;"/>
+                </MudAvatar>
+            </MudItem>
+
+            <MudItem xs="12" sm="8">
+                <MudText Typo="Typo.h3" Class="fw-bold" GutterBottom="true"><b>@_mainPage?.Headline</b></MudText>
+                <MudText Typo="Typo.h6" Color="Color.Primary" GutterBottom="true">@_mainPage?.Tagline</MudText>
+
+                @if (string.IsNullOrEmpty(_mainPage?.Location) is false)
+                {
+                    <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="1" Class="mb-4">
+                        <MudIcon Icon="@Icons.Material.Filled.LocationOn" Size="Size.Small" Color="Color.Secondary"/>
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">@_mainPage.Location</MudText>
+                    </MudStack>
+                }
+
+                <MudStack Row="true" Spacing="2" Class="mt-2 flex-wrap">
+                    @if (string.IsNullOrEmpty(_resumeUrl) is false)
+                    {
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Description"
+                                   Href="@_resumeUrl" Target="_blank">View Resume</MudButton>
+                    }
+                    @if (string.IsNullOrEmpty(_personalInformation?.SocialMediaLinks.Github) is false)
+                    {
+                        <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Custom.Brands.GitHub"
+                                   Href="@UriMapper.GetGitHubUri(_personalInformation.SocialMediaLinks.Github)" Target="_blank">GitHub</MudButton>
+                    }
+                    @if (string.IsNullOrEmpty(_personalInformation?.SocialMediaLinks.LinkedIn) is false)
+                    {
+                        <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Custom.Brands.LinkedIn"
+                                   Href="@UriMapper.GetLinkedInUri(_personalInformation.SocialMediaLinks.LinkedIn)" Target="_blank">LinkedIn</MudButton>
+                    }
+                    @if (string.IsNullOrEmpty(_personalInformation?.SocialMediaLinks.Mail) is false)
+                    {
+                        <MudButton Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Email"
+                                   Href="@UriMapper.GetMailUri(_personalInformation.SocialMediaLinks.Mail)">Contact</MudButton>
+                    }
+                </MudStack>
+            </MudItem>
+        </MudGrid>
+
+        <!-- Tech highlights -->
+        @if (_mainPage?.Highlights.Any() ?? false)
+        {
+            <MudStack Row="true" Justify="Justify.Center" Spacing="2" Class="mt-8 flex-wrap">
+                @foreach (var highlight in _mainPage.Highlights)
+                {
+                    <MudChip T="string" Variant="Variant.Text" Color="Color.Primary" Size="Size.Medium">@highlight</MudChip>
+                }
+            </MudStack>
+        }
+
+        <!-- About section -->
+        <MudPaper Elevation="1" Class="pa-8 mt-8 rounded-xl">
+            <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-4">
+                <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Primary"/>
+                <MudText Typo="Typo.h5"><b>@_mainPage?.Title</b></MudText>
+            </MudStack>
+            <MudDivider Class="mb-6"/>
             @foreach (var paragraph in _mainPage?.Paragraphs ?? Enumerable.Empty<string>())
             {
-                <MudText Class="mb-4">@paragraph</MudText>
+                <MudText Typo="Typo.body1" Class="mb-4" Style="line-height:1.8;">@paragraph</MudText>
             }
-        </MudItem>
+        </MudPaper>
 
-    </MudGrid>
+    </MudContainer>
 }
 else
 {
     <PageTitle>Loading...</PageTitle>
 
-    <MudGrid Class="d-flex justify-center">
-
-        <MudItem>
-            <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="250px" Width="200px" Class="rounded-lg"/>
-
-            <MudSkeleton SkeletonType="SkeletonType.Text" Width="400px" Class="mb-20 mt-4"/>
-            <MudSkeleton SkeletonType="SkeletonType.Text" Width="400px" Class="mb-4 mt-4"/>
-            <MudSkeleton SkeletonType="SkeletonType.Text" Width="400px" Class="mb-4 mt-4"/>
-        </MudItem>
-
-    </MudGrid>
+    <MudContainer MaxWidth="MaxWidth.Medium">
+        <MudGrid Class="align-center" Spacing="6">
+            <MudItem xs="12" sm="4" Class="d-flex justify-center">
+                <MudSkeleton SkeletonType="SkeletonType.Circle" Height="220px" Width="220px"/>
+            </MudItem>
+            <MudItem xs="12" sm="8">
+                <MudSkeleton SkeletonType="SkeletonType.Text" Width="60%" Height="48px" Class="mb-4"/>
+                <MudSkeleton SkeletonType="SkeletonType.Text" Width="80%" Class="mb-2"/>
+                <MudSkeleton SkeletonType="SkeletonType.Text" Width="40%" Class="mb-4"/>
+                <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="320px" Height="36px"/>
+            </MudItem>
+        </MudGrid>
+        <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="300px" Class="mt-8 rounded-xl"/>
+    </MudContainer>
 }

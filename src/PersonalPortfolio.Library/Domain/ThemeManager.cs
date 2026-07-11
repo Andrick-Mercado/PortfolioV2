@@ -53,17 +53,49 @@ public static class ThemeManager
             case WebsiteTheme.Green:
                 theme = new MudTheme
                 {
-                    //#00AA44
                     PaletteLight = new PaletteLight
                     {
-                        AppbarBackground = "#00AA44",
-                        Primary = new MudColor("#00D100"),
-                        //Secondary = new MudColor("#000000")
+                        Primary = "#00A76F",
+                        PrimaryDarken = "#007867",
+                        PrimaryLighten = "#5BE49B",
+                        Secondary = "#1C252E",
+                        AppbarBackground = "rgba(255,255,255,0.85)",
+                        AppbarText = "#1C252E",
+                        Background = "#F7F9F8",
+                        Surface = "#FFFFFF",
+                        DrawerBackground = "#FFFFFF",
+                        DrawerText = "#1C252E",
+                        DrawerIcon = "#00A76F",
+                        TextPrimary = "#1C252E",
+                        TextSecondary = "#637381",
+                        ActionDefault = "#637381",
+                        LinesDefault = "#E9EEEC",
+                        Divider = "#E9EEEC",
+                        Success = "#00A76F"
                     },
                     PaletteDark = new PaletteDark
                     {
-                        Primary =  new MudColor("#00D100"),
-                        //Secondary =  new MudColor("#000000"
+                        Primary = "#5BE49B",
+                        PrimaryDarken = "#00A76F",
+                        PrimaryLighten = "#C8FAD6",
+                        Secondary = "#C8FAD6",
+                        AppbarBackground = "rgba(20,26,33,0.85)",
+                        AppbarText = "#F4F6F8",
+                        Background = "#141A21",
+                        Surface = "#1C252E",
+                        DrawerBackground = "#1C252E",
+                        DrawerText = "#F4F6F8",
+                        DrawerIcon = "#5BE49B",
+                        TextPrimary = "#F4F6F8",
+                        TextSecondary = "#919EAB",
+                        ActionDefault = "#919EAB",
+                        LinesDefault = "#2F3944",
+                        Divider = "#2F3944",
+                        Success = "#5BE49B"
+                    },
+                    LayoutProperties = new LayoutProperties
+                    {
+                        DefaultBorderRadius = "12px"
                     }
                 };
                 break;
