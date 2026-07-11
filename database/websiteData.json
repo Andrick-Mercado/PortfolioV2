@@ -20,13 +20,23 @@
     "mainPage": {
       "name": "My Portfolio",
       "title": "About Me",
+      "headline": "Hi, I'm Andrick 👋",
+      "tagline": "Software Engineer specializing in C# and .NET — building backend APIs, cloud-based services, and internal tools.",
+      "location": "San Diego, CA",
       "imageRoute": "images/headshot_01.png",
       "icon": "AccountCircle",
       "paragraphs": [
-        "Ever since I was a kid, I’ve been fascinated by how things work especially computers. My curiosity led me to programming, where I found a way to bring hardware to life through software. Inspired by the inner workings of technology, I pursued a degree in Computer Science to better understand and contribute to this rapidly evolving field.",
-        "As a first-generation college student, my path hasn’t been easy. I used to wake up at 4 AM every day to cross the border from Mexico to the U.S. for school. That determination has shaped who I am today—a driven learner with a deep appreciation for every opportunity to grow.",
-        "My passion for technology started with video games. Getting my first console sparked a lifelong interest in game development. Since then, I’ve gained hands-on experience building games in Unity and Unreal, and I’m proficient in several programming languages.",
-        "At my core, I’m a curious and persistent learner. If something grabs my interest, I’ll dig deep until I understand it. Whether it's CPUs, code, or game engines, I’m always seeking knowledge and striving to improve."
+        "Software Engineer specializing in C# and .NET, building web applications, backend services, and games."
+      ],
+      "highlights": [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "Blazor",
+        "Azure Functions",
+        "Cosmos DB",
+        "Unity",
+        "Git"
       ]
     },
     "otherPages": [
@@ -35,96 +45,106 @@
         "title": "Experience",
         "endpoint": "experience",
         "pageFormat": "Experience",
-        "icon": "Lightbulb",
+        "icon": "Work",
         "cards": [
           {
-            "name": "A",
-            "title": "B",
-            "body": "C",
-            "icon": "Lightbulb",
+            "name": "Experience",
+            "title": "Software Engineer",
+            "subtitle": "Helix Electric · San Diego, CA",
+            "period": "May 2023 — Present",
+            "body": "Designed and implemented idempotent, event-driven workflows using Azure Functions and Cosmos DB, enabling horizontal scaling with increasing user load while maintaining data consistency across distributed executions. Managed Azure API Management (APIM) to publish and route traffic across multiple internal APIs, enforcing IP whitelisting and rate limiting. Developed a high-performance ASP.NET Core Web API using Dapper and role-based authorization, supporting more than 2x growth in request volume since initial release. Built an in-house Blazor dashboard with Azure Log Analytics integration to monitor system health in real time, and automated manual data-entry workflows, significantly reducing manual processing time.",
+            "icon": "Work",
             "imageUrl": "",
             "embedUrl": "",
-            "LearnMoreUrl": "https://www.google.com"
+            "learnMoreUrl": "",
+            "tags": [ "C#", "Azure Functions", "Cosmos DB", "APIM", "ASP.NET Core", "Dapper", "Blazor" ]
+          },
+          {
+            "name": "Experience",
+            "title": "Junior Software Engineer",
+            "subtitle": "SDSU Research Foundation · San Diego, CA",
+            "period": "Oct 2022 — Apr 2023",
+            "body": "Architected the backend infrastructure for an educational VR game using Unity, C#, and PlayMaker, optimizing for Android and iOS deployment with Google Cardboard. Integrated Firebase Realtime Database to manage player data and applied Python for automated analytics, generating insights from game testing sessions.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "",
+            "tags": [ "Unity", "C#", "VR", "Firebase", "Python" ]
           }
         ]
       },
       {
         "sortOrder": 1,
-        "title": "Skills",
-        "endpoint": "skills",
-        "pageFormat": "Skill",
-        "icon": "AutoGraph",
+        "title": "Education",
+        "endpoint": "education",
+        "pageFormat": "Education",
+        "icon": "School",
         "cards": [
           {
-            "name": "My Experience & Education",
-            "title": "Proficient with Unity",
-            "body": "I started my Unity journey at the beginning of 2020, and since then I have been programming and designing architectures for games.",
-            "icon": "Lightbulb",
+            "name": "Education",
+            "title": "Bachelor's Degree in Computer Science",
+            "subtitle": "San Diego State University · San Diego, CA",
+            "period": "2022",
+            "body": "Relevant Coursework: Data Structures, Algorithms, Machine Learning, Artificial Intelligence, Advanced 3D Game Programming, Database Theory, Data Science.",
+            "icon": "School",
             "imageUrl": "",
             "embedUrl": "",
-            "LearnMoreUrl": ""
-          },
-          {
-            "name": "My Experience & Education",
-            "title": "Proficient in ASP.NET Core",
-            "body": "I started my .NET Core journey at the start of 2023, making websites with MVC and scaffolding.",
-            "icon": "Lightbulb",
-            "imageUrl": "",
-            "embedUrl": "",
-            "LearnMoreUrl": ""
-          },
-          {
-            "name": "My Experience & Education",
-            "title": "Experienced in Blazor",
-            "body": "I started using Blazor in a job application, after that I started creating personal projects using server and client side Blazor.",
-            "icon": "Lightbulb",
-            "imageUrl": "",
-            "embedUrl": "",
-            "LearnMoreUrl": ""
-          },
-          {
-            "name": "My Experience & Education",
-            "title": "Experienced in Java",
-            "body": "I started using Java in my last year of high school (2019) for all sorts of projects.",
-            "icon": "Lightbulb",
-            "imageUrl": "",
-            "embedUrl": "",
-            "LearnMoreUrl": ""
-          },
-          {
-            "name": "My Experience & Education",
-            "title": "Team Work",
-            "body": "I've administered and been a part of many teams, I thrive my self on my work ethic and on helping others understand all while being open to learning from them.",
-            "icon": "Lightbulb",
-            "imageUrl": "",
-            "embedUrl": "",
-            "LearnMoreUrl": ""
-          },
-          {
-            "name": "My Experience & Education",
-            "title": "Experienced in Git",
-            "body": "Experienced Version Control user, using Git with GUI’s such as Git Bash, Github, and Gitlab, I've administered the majority of my projects with Git to ease productivity.",
-            "icon": "Lightbulb",
-            "imageUrl": "",
-            "embedUrl": "",
-            "LearnMoreUrl": ""
+            "learnMoreUrl": "",
+            "tags": [ "Data Structures", "Algorithms", "Machine Learning", "AI", "3D Game Programming" ]
           }
         ]
       },
       {
-        "sortOrder": 3,
+        "sortOrder": 2,
+        "title": "Projects",
+        "endpoint": "projects",
+        "pageFormat": "Project",
+        "icon": "RocketLaunch",
+        "cards": [
+          {
+            "name": "Projects",
+            "title": "MCP Builder App",
+            "subtitle": "C# · .NET MAUI · SQLite",
+            "period": "Mar 2026 — Present",
+            "body": "A .NET MAUI desktop application that generates Model Context Protocol (MCP) servers from documentation site URLs, enabling AI agents to interact with sites that lack native MCP support. Implements a hybrid C# scraping pipeline that attempts fast HTML parsing via HtmlAgilityPack with automatic fallback to Selenium for JavaScript-rendered pages, balancing speed and coverage.",
+            "icon": "Terminal",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/andrick-mercado",
+            "tags": [ "C#", ".NET MAUI", "SQLite", "HtmlAgilityPack", "Selenium", "MCP" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Reusable Portfolio Website",
+            "subtitle": ".NET 8 Blazor Hybrid",
+            "period": "Dec 2023 — Present",
+            "body": "A Blazor WebAssembly based portfolio generator powered by a .NET MAUI application, automating GitHub Pages deployment. Enhanced usability with dark mode, local storage support, and performance optimization through prerendering with React-Snap.",
+            "icon": "Web",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/andrick-mercado",
+            "tags": [ "Blazor", ".NET MAUI", "GitHub Pages", "React-Snap", "Dark Mode" ]
+          }
+        ]
+      },
+      {
+        "sortOrder": 4,
         "title": "Resume",
         "endpoint": "https://docs.google.com/document/d/1NzIuVymJB1AxnmTCS_Wprf9u6-O_Qa-7vnFpc8n5guA/edit?usp=sharing",
         "pageFormat": "ExternalLink",
         "icon": "InsertDriveFile",
         "cards": [
           {
-            "name": "123",
-            "title": "456",
-            "body": "1",
-            "icon": "Lightbulb",
+            "name": "Resume",
+            "title": "Resume",
+            "subtitle": "",
+            "period": "",
+            "body": "",
+            "icon": "InsertDriveFile",
             "imageUrl": "",
-            "embedUrl": "https://docs.google.com/document/d/1NzIuVymJB1AxnmTCS_Wprf9u6-O_Qa-7vnFpc8n5guA/edit?usp=sharing"
+            "embedUrl": "https://docs.google.com/document/d/1NzIuVymJB1AxnmTCS_Wprf9u6-O_Qa-7vnFpc8n5guA/edit?usp=sharing",
+            "learnMoreUrl": "",
+            "tags": []
           }
         ]
       }
