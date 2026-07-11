@@ -21,7 +21,7 @@
       "name": "My Portfolio",
       "title": "About Me",
       "headline": "Hi, I'm Andrick 👋",
-      "tagline": "Software Engineer specializing in C# and .NET — building backend APIs, cloud-based services, and internal tools.",
+      "tagline": "Software Engineer specializing in C# and .NET, building web applications, backend services, and games.",
       "location": "San Diego, CA",
       "imageRoute": "images/headshot_01.png",
       "icon": "AccountCircle",
@@ -37,7 +37,20 @@
         "Cosmos DB",
         "Unity",
         "Git"
-      ]
+      ],
+      "resume": {
+        "name": "Resume",
+        "title": "Andrick Mercado — Resume",
+        "subtitle": "Software Engineer · San Diego, CA",
+        "period": "",
+        "body": "",
+        "icon": "InsertDriveFile",
+        "imageUrl": "",
+        "embedUrl": "https://drive.google.com/file/d/1rIMkUCai3HagRCYy6qas4SgdFNn33jot/preview",
+        "downloadUrl": "https://drive.google.com/uc?export=download&id=1rIMkUCai3HagRCYy6qas4SgdFNn33jot",
+        "learnMoreUrl": "https://drive.google.com/file/d/1rIMkUCai3HagRCYy6qas4SgdFNn33jot/view",
+        "tags": []
+      }
     },
     "otherPages": [
       {
@@ -124,27 +137,6 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/andrick-mercado",
             "tags": [ "Blazor", ".NET MAUI", "GitHub Pages", "React-Snap", "Dark Mode" ]
-          }
-        ]
-      },
-      {
-        "sortOrder": 4,
-        "title": "Resume",
-        "endpoint": "https://docs.google.com/document/d/1NzIuVymJB1AxnmTCS_Wprf9u6-O_Qa-7vnFpc8n5guA/edit?usp=sharing",
-        "pageFormat": "ExternalLink",
-        "icon": "InsertDriveFile",
-        "cards": [
-          {
-            "name": "Resume",
-            "title": "Resume",
-            "subtitle": "",
-            "period": "",
-            "body": "",
-            "icon": "InsertDriveFile",
-            "imageUrl": "",
-            "embedUrl": "https://docs.google.com/document/d/1NzIuVymJB1AxnmTCS_Wprf9u6-O_Qa-7vnFpc8n5guA/edit?usp=sharing",
-            "learnMoreUrl": "",
-            "tags": []
           }
         ]
       }

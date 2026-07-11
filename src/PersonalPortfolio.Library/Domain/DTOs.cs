@@ -58,6 +58,7 @@ public class MainPage
 
     public List<string> Paragraphs { get; set; }
     public List<string> Highlights { get; set; } = [];
+    public Card Resume { get; set; }
 }
 
 public class OtherPages
@@ -88,6 +89,7 @@ public class Card
 
     public string ImageUrl { get; set; }
     public string EmbedUrl { get; set; }
+    public string DownloadUrl { get; set; }
     public string LearnMoreUrl { get; set; }
     public List<string> Tags { get; set; } = [];
 }
@@ -105,7 +107,8 @@ public enum CardType
     Experience,
     Education,
     Project,
-    ExternalLink
+    ExternalLink,
+    Pdf
 }
 
 public enum Icon

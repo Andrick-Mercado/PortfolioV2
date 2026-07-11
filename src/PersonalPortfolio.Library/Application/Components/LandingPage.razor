@@ -30,7 +30,7 @@
                     @if (string.IsNullOrEmpty(_resumeUrl) is false)
                     {
                         <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Description"
-                                   Href="@_resumeUrl" Target="_blank">View Resume</MudButton>
+                                   Href="@_resumeUrl" Target="@_resumeTarget">View Resume</MudButton>
                     }
                     @if (string.IsNullOrEmpty(_personalInformation?.SocialMediaLinks.Github) is false)
                     {
@@ -62,18 +62,40 @@
             </MudStack>
         }
 
-        <!-- About section -->
-        <MudPaper Elevation="1" Class="pa-8 mt-8 rounded-xl">
-            <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-4">
-                <MudIcon Icon="@Icons.Material.Filled.AccountCircle" Color="Color.Primary"/>
-                <MudText Typo="Typo.h5"><b>@_mainPage?.Title</b></MudText>
-            </MudStack>
-            <MudDivider Class="mb-6"/>
-            @foreach (var paragraph in _mainPage?.Paragraphs ?? Enumerable.Empty<string>())
-            {
-                <MudText Typo="Typo.body1" Class="mb-4" Style="line-height:1.8;">@paragraph</MudText>
-            }
-        </MudPaper>
+        <!-- Resume section -->
+        @if (_resume is not null)
+        {
+            <MudPaper id="resume" Elevation="2" Class="rounded-xl overflow-hidden mt-8">
+                <MudToolBar Class="px-4">
+                    <MudIcon Icon="@IconMapper.GetIcon(_resume.Icon)" Color="Color.Primary" Class="mr-3"/>
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.subtitle1"><b>@_resume.Title</b></MudText>
+                        @if (string.IsNullOrEmpty(_resume.Subtitle) is false)
+                        {
+                            <MudText Typo="Typo.caption" Color="Color.Secondary">@_resume.Subtitle</MudText>
+                        }
+                    </MudStack>
+                    <MudSpacer/>
+                    @if (string.IsNullOrEmpty(_resume.DownloadUrl) is false)
+                    {
+                        <MudTooltip Text="Download PDF">
+                            <MudIconButton Icon="@Icons.Material.Filled.Download" Color="Color.Primary"
+                                           Href="@_resume.DownloadUrl" Target="_blank"/>
+                        </MudTooltip>
+                    }
+                    @if (string.IsNullOrEmpty(_resume.LearnMoreUrl) is false)
+                    {
+                        <MudTooltip Text="Open in new tab">
+                            <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Color="Color.Primary"
+                                           Href="@_resume.LearnMoreUrl" Target="_blank"/>
+                        </MudTooltip>
+                    }
+                </MudToolBar>
+                <MudDivider/>
+                <iframe src="@_resume.EmbedUrl" title="@_resume.Title" allow="autoplay"
+                        style="display:block; width:100%; height:80vh; border:none;"></iframe>
+            </MudPaper>
+        }
 
     </MudContainer>
 }
@@ -93,6 +115,6 @@ else
                 <MudSkeleton SkeletonType="SkeletonType.Rectangle" Width="320px" Height="36px"/>
             </MudItem>
         </MudGrid>
-        <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="300px" Class="mt-8 rounded-xl"/>
+        <MudSkeleton SkeletonType="SkeletonType.Rectangle" Height="400px" Class="mt-8 rounded-xl"/>
     </MudContainer>
 }

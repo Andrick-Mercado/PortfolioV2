@@ -112,3 +112,47 @@ else if (_currentPage?.PageFormat is CardType.Project)
         </MudGrid>
     </MudContainer>
 }
+else if (_currentPage?.PageFormat is CardType.Pdf)
+{
+    <MudContainer MaxWidth="MaxWidth.Large">
+        <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-2">
+            <MudIcon Icon="@IconMapper.GetIcon(_currentPage.Icon)" Color="Color.Primary" Size="Size.Large"/>
+            <MudText Typo="Typo.h4"><b>@_currentPage.Title</b></MudText>
+        </MudStack>
+        <MudDivider Class="mb-8"/>
+
+        @foreach (var document in _currentPage.Cards)
+        {
+            <MudPaper Elevation="2" Class="rounded-xl overflow-hidden mb-8">
+                <MudToolBar Class="px-4">
+                    <MudIcon Icon="@IconMapper.GetIcon(document.Icon)" Color="Color.Primary" Class="mr-3"/>
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.subtitle1"><b>@document.Title</b></MudText>
+                        @if (string.IsNullOrEmpty(document.Subtitle) is false)
+                        {
+                            <MudText Typo="Typo.caption" Color="Color.Secondary">@document.Subtitle</MudText>
+                        }
+                    </MudStack>
+                    <MudSpacer/>
+                    @if (string.IsNullOrEmpty(document.DownloadUrl) is false)
+                    {
+                        <MudTooltip Text="Download PDF">
+                            <MudIconButton Icon="@Icons.Material.Filled.Download" Color="Color.Primary"
+                                           Href="@document.DownloadUrl" Target="_blank"/>
+                        </MudTooltip>
+                    }
+                    @if (string.IsNullOrEmpty(document.LearnMoreUrl) is false)
+                    {
+                        <MudTooltip Text="Open in new tab">
+                            <MudIconButton Icon="@Icons.Material.Filled.OpenInNew" Color="Color.Primary"
+                                           Href="@document.LearnMoreUrl" Target="_blank"/>
+                        </MudTooltip>
+                    }
+                </MudToolBar>
+                <MudDivider/>
+                <iframe src="@document.EmbedUrl" title="@document.Title" allow="autoplay"
+                        style="display:block; width:100%; height:80vh; border:none;"></iframe>
+            </MudPaper>
+        }
+    </MudContainer>
+}
