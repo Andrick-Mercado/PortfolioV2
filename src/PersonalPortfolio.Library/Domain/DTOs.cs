@@ -74,6 +74,7 @@ public class OtherPages
     public Icon Icon { get; set; }
 
     public List<Card> Cards { get; set; }
+    public List<string> FilterTags { get; set; } = [];
 }
 
 public class Card

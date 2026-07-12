@@ -71,10 +71,31 @@ else if (_currentPage?.PageFormat is CardType.Project)
             <MudIcon Icon="@IconMapper.GetIcon(_currentPage.Icon)" Color="Color.Primary" Size="Size.Large"/>
             <MudText Typo="Typo.h4"><b>@_currentPage.Title</b></MudText>
         </MudStack>
-        <MudDivider Class="mb-8"/>
+        <MudDivider Class="mb-4"/>
+
+        @if (_availableFilterTags.Count > 0)
+        {
+            <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2" Class="mb-4 flex-wrap">
+                <MudIcon Icon="@Icons.Material.Filled.FilterList" Size="Size.Small" Color="Color.Default"/>
+                @foreach (var tag in _availableFilterTags)
+                {
+                    var isSelected = _selectedTags.Contains(tag);
+                    <MudChip T="string"
+                             Variant="@(isSelected ? Variant.Filled : Variant.Outlined)"
+                             Color="@(isSelected ? Color.Primary : Color.Default)"
+                             Size="Size.Small"
+                             OnClick="@(() => ToggleTag(tag))">@tag</MudChip>
+                }
+                @if (_selectedTags.Count > 0)
+                {
+                    <MudButton Variant="Variant.Text" Color="Color.Secondary" Size="Size.Small"
+                               StartIcon="@Icons.Material.Filled.Clear" OnClick="ClearFilters">Clear</MudButton>
+                }
+            </MudStack>
+        }
 
         <MudGrid Spacing="4" Style="align-items:start;">
-            @foreach (var project in _currentPage.Cards)
+            @foreach (var project in GetFilteredProjects())
             {
                 <MudItem xs="12" sm="6" md="4">
                     <MudCard Elevation="1" Class="rounded-xl d-flex flex-column">

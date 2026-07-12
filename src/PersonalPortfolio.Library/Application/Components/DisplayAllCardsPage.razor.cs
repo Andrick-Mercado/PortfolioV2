@@ -11,6 +11,9 @@ public partial class DisplayAllCardsPage
 
     private bool _hasLoaded;
     private WebsiteData _websiteDatabaseData;
+    private HashSet<string> _selectedTags = [];
+    private List<string> _availableFilterTags = [];
+
     [Parameter] public string ClientRouteName { get; set; } = default!;
     [Inject] private IWebsiteRepo WebsiteRepo { get; set; } = default!;
 
@@ -22,6 +25,7 @@ public partial class DisplayAllCardsPage
         _currentPage = _websiteDatabaseData.OtherPages.FirstOrDefault(x => x.Endpoint == ClientRouteName);
 
         _hasLoaded = _currentPage is not null;
+        BuildFilterTags();
         StateHasChanged();
     }
 
@@ -42,7 +46,50 @@ public partial class DisplayAllCardsPage
         }
 
         _hasLoaded = _currentPage is not null;
+        BuildFilterTags();
         StateHasChanged();
+    }
+
+    private void BuildFilterTags()
+    {
+        if (_currentPage?.PageFormat is not CardType.Project)
+        {
+            _availableFilterTags = [];
+            return;
+        }
+
+        if (_currentPage.FilterTags is { Count: > 0 })
+        {
+            _availableFilterTags = _currentPage.FilterTags;
+        }
+        else
+        {
+            _availableFilterTags = _currentPage.Cards
+                .SelectMany(c => c.Tags)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(t => t, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+        }
+
+        _selectedTags.IntersectWith(_availableFilterTags);
+    }
+
+    private void ToggleTag(string tag)
+    {
+        if (!_selectedTags.Remove(tag))
+            _selectedTags.Add(tag);
+    }
+
+    private void ClearFilters() => _selectedTags.Clear();
+
+    private IReadOnlyList<Card> GetFilteredProjects()
+    {
+        if (_currentPage is null) return [];
+        if (_selectedTags.Count == 0) return _currentPage.Cards;
+
+        return _currentPage.Cards
+            .Where(c => c.Tags.Any(t => _selectedTags.Contains(t)))
+            .ToList();
     }
 
     private IEnumerable<IGrouping<string, Card>> GetCardsGroupedByCardName()

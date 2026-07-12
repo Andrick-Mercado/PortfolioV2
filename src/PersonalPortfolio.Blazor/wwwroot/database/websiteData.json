@@ -113,6 +113,7 @@
         "endpoint": "projects",
         "pageFormat": "Project",
         "icon": "RocketLaunch",
+        "FilterTags": [ "C#", ".NET MAUI", "SQLite", "Unity", "ASP.NET Core", "Machine Learning", "Simulation", "MCP", "AI", "Python" ],
         "cards": [
           {
             "name": "Projects",
