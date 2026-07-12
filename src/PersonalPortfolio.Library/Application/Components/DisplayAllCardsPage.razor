@@ -99,7 +99,14 @@ else if (_currentPage?.PageFormat is CardType.Project)
                                 </MudStack>
                             }
                         </MudCardContent>
-                        @if (string.IsNullOrEmpty(project.LearnMoreUrl) is false)
+                        @if (project.BlogSections.Any() && string.IsNullOrEmpty(project.Slug) is false)
+                        {
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Text" Color="Color.Primary" EndIcon="@Icons.Material.Filled.ArrowForward"
+                                           Href="@RouteMapper.GetProjectDetailRoute(_currentPage.Endpoint, project.Slug)">Learn More</MudButton>
+                            </MudCardActions>
+                        }
+                        else if (string.IsNullOrEmpty(project.LearnMoreUrl) is false)
                         {
                             <MudCardActions>
                                 <MudButton Variant="Variant.Text" Color="Color.Primary" EndIcon="@Icons.Material.Filled.OpenInNew"

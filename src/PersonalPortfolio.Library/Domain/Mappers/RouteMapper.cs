@@ -6,4 +6,9 @@ public static class RouteMapper
     {
         return $"card/{endpoint}";
     }
+
+    public static string GetProjectDetailRoute(string pageEndpoint, string slug)
+    {
+        return $"card/{pageEndpoint}/{slug}";
+    }
 }

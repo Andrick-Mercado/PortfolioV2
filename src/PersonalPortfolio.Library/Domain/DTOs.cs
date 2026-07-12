@@ -91,7 +91,27 @@ public class Card
     public string EmbedUrl { get; set; }
     public string DownloadUrl { get; set; }
     public string LearnMoreUrl { get; set; }
+    public string Slug { get; set; }
     public List<string> Tags { get; set; } = [];
+    public List<BlogSection> BlogSections { get; set; } = [];
+}
+
+public class BlogSection
+{
+    public string Title { get; set; }
+    public string Body { get; set; }
+    public string ImageUrl { get; set; }
+    public string ImageCaption { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public BlogSectionType SectionType { get; set; }
+}
+
+public enum BlogSectionType
+{
+    Text,
+    Image,
+    TextWithImage
 }
 
 #region Enums
@@ -127,7 +147,22 @@ public enum Icon
     Groups,
     Terminal,
     Web,
-    RocketLaunch
+    RocketLaunch,
+    EditNote,
+    ViewInAr,
+    Rocket,
+    Psychology,
+    BugReport,
+    Flutter,
+    Terrain,
+    Waves,
+    AccountBalance,
+    Lock,
+    VolunteerActivism,
+    Visibility,
+    Hub,
+    Extension,
+    GridOn
 }
 
 #endregion

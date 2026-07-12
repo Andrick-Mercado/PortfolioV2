@@ -23,6 +23,21 @@ public static class IconMapper
             Icon.Terminal => Icons.Material.Filled.Terminal,
             Icon.Web => Icons.Material.Filled.Web,
             Icon.RocketLaunch => Icons.Material.Filled.RocketLaunch,
+            Icon.EditNote => Icons.Material.Filled.EditNote,
+            Icon.ViewInAr => Icons.Material.Filled.ViewInAr,
+            Icon.Rocket => Icons.Material.Filled.Rocket,
+            Icon.Psychology => Icons.Material.Filled.Psychology,
+            Icon.BugReport => Icons.Material.Filled.BugReport,
+            Icon.Flutter => Icons.Material.Filled.Air,
+            Icon.Terrain => Icons.Material.Filled.Terrain,
+            Icon.Waves => Icons.Material.Filled.Waves,
+            Icon.AccountBalance => Icons.Material.Filled.AccountBalance,
+            Icon.Lock => Icons.Material.Filled.Lock,
+            Icon.VolunteerActivism => Icons.Material.Filled.VolunteerActivism,
+            Icon.Visibility => Icons.Material.Filled.Visibility,
+            Icon.Hub => Icons.Material.Filled.Hub,
+            Icon.Extension => Icons.Material.Filled.Extension,
+            Icon.GridOn => Icons.Material.Filled.GridOn,
             _ => Icons.Material.Filled.DeviceUnknown
         };
     }

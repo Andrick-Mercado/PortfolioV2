@@ -124,7 +124,38 @@
             "imageUrl": "",
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/andrick-mercado",
-            "tags": [ "C#", ".NET MAUI", "SQLite", "HtmlAgilityPack", "Selenium", "MCP" ]
+            "slug": "mcp-builder",
+            "tags": [ "C#", ".NET MAUI", "SQLite", "HtmlAgilityPack", "Selenium", "MCP" ],
+            "blogSections": [
+              {
+                "title": "Overview",
+                "body": "MCP Builder App is a cross-platform desktop tool built with .NET MAUI that empowers developers and AI practitioners to generate Model Context Protocol (MCP) servers from any documentation website. Many popular libraries and frameworks lack native MCP support, making it difficult for AI agents like Claude or Copilot to interact with their documentation programmatically. MCP Builder bridges that gap by scraping documentation sites and producing a fully functional MCP server that AI agents can query.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "How It Works",
+                "body": "The application uses a hybrid scraping pipeline written entirely in C#. It first attempts fast HTML parsing using HtmlAgilityPack to extract content from static pages. If JavaScript-rendered content is detected, the pipeline automatically falls back to Selenium WebDriver for full browser-based scraping. This dual approach balances speed with coverage, ensuring that even modern single-page application documentation sites are fully captured. All scraped data is stored locally in an SQLite database for offline access and fast server generation.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Key Features",
+                "body": "• Automatic MCP server generation from any documentation URL\n• Hybrid scraping: HtmlAgilityPack for speed, Selenium for JS-heavy sites\n• Local SQLite storage for offline access and incremental updates\n• Cross-platform support via .NET MAUI (Windows, macOS)\n• Simple one-click server export with configurable endpoints\n• Built-in preview to verify scraped content before server generation",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Technical Stack",
+                "body": "The project is built on .NET MAUI for the desktop UI, leveraging the MVVM pattern for clean separation of concerns. The scraping engine uses HtmlAgilityPack and Selenium WebDriver, with a strategy pattern to switch between them seamlessly. Data persistence is handled through SQLite with a lightweight repository layer. The generated MCP servers follow the official Model Context Protocol specification, ensuring compatibility with any MCP-compliant AI agent.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              }
+            ]
           },
           {
             "name": "Projects",
@@ -136,7 +167,337 @@
             "imageUrl": "",
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/andrick-mercado",
-            "tags": [ "Blazor", ".NET MAUI", "GitHub Pages", "React-Snap", "Dark Mode" ]
+            "slug": "portfolio-website",
+            "tags": [ "Blazor", ".NET MAUI", "GitHub Pages", "React-Snap", "Dark Mode" ],
+            "blogSections": [
+              {
+                "title": "Overview",
+                "body": "This portfolio website is a fully reusable, data-driven Blazor WebAssembly application designed so that anyone can fork the repository, update a single JSON file, and have a professional portfolio site deployed to GitHub Pages within minutes. The entire site — from experience and education to projects and skills — is controlled through websiteData.json, requiring zero code changes to personalize.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Architecture & Design",
+                "body": "The project follows a clean architecture with two main layers: a Blazor WebAssembly front-end project and a shared .NET class library. The library contains all components, domain models, and infrastructure services, making it possible to reuse the same components in a .NET MAUI hybrid app for desktop deployment. MudBlazor provides the entire UI component library, ensuring a consistent, modern Material Design look with built-in dark mode support and responsive layouts.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Key Features",
+                "body": "• Fully data-driven: all content loaded from a single JSON file\n• Dark mode with persistent theme preference via Blazored.LocalStorage\n• Responsive design that works seamlessly on mobile, tablet, and desktop\n• Embedded PDF resume viewer with Google Drive integration\n• Dynamic project blog pages for detailed write-ups\n• GitHub Actions CI/CD with automatic deployment to GitHub Pages\n• SEO-friendly prerendering using React-Snap",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Deployment Pipeline",
+                "body": "The site is automatically built and deployed via a GitHub Actions workflow. On every push to the main branch, the workflow restores dependencies, publishes the Blazor WebAssembly app, runs React-Snap for prerendering to generate static HTML snapshots for SEO, and deploys the output to GitHub Pages. The entire process is zero-touch after the initial setup, making it trivial to keep the portfolio up to date by simply editing the JSON data file and pushing a commit.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              }
+            ]
+          },
+          {
+            "name": "Projects",
+            "title": "Notie Taker",
+            "subtitle": "ASP.NET Core Web App",
+            "period": "Apr 2023",
+            "body": "An ASP.NET Core web application that allows users to create, edit, and delete notes with a clean, intuitive interface.",
+            "icon": "EditNote",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/NotieTaker",
+            "slug": "",
+            "tags": [ "C#", "ASP.NET Core", "Web" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Pestilence",
+            "subtitle": "Unity · C# · Team of 30+",
+            "period": "May 2022",
+            "body": "Programmed with a team of 30+, including creating and maintaining game mechanics, tool creation for Art and Audio teams, making use of agile practices, Unity, and C#.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "",
+            "slug": "",
+            "tags": [ "Unity", "C#", "Agile", "Game Dev", "Team Project" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Safe Routes to School Evaluation VR App",
+            "subtitle": "Unity · VR · Google Cardboard",
+            "period": "Oct 2022",
+            "body": "Implemented game architecture for an educational VR game using Unity, C#, and PlayMaker, supporting VR for Android and iOS via Google Cardboard.",
+            "icon": "ViewInAr",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "",
+            "slug": "",
+            "tags": [ "Unity", "C#", "VR", "PlayMaker", "Android", "iOS" ]
+          },
+          {
+            "name": "Projects",
+            "title": "SpaceCraft",
+            "subtitle": "Unity · 3D Multiplayer",
+            "period": "May 2022",
+            "body": "SpaceCraft is a 3rd-person multiplayer open-world quest game where the key objectives are exploring new planets while completing quests.",
+            "icon": "Rocket",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "",
+            "slug": "",
+            "tags": [ "Unity", "C#", "3D", "Multiplayer", "Open World" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Traversial",
+            "subtitle": "Unity · 3D Adventure",
+            "period": "Jul 2022",
+            "body": "Escape with your life if you can! Traversial is a game where you need to escape a space prison while monsters guard the exits.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "",
+            "slug": "",
+            "tags": [ "Unity", "C#", "3D", "Adventure" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Platformer Co-Op",
+            "subtitle": "Unity · 2D Co-Op",
+            "period": "Oct 2022",
+            "body": "A 2D platformer co-op game made for the Aztec Game Lab club's 2nd workshop of the semester at San Diego State University, built by a group of 4 people in 2 weeks.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Platformer-Co-Op",
+            "slug": "",
+            "tags": [ "Unity", "C#", "2D", "Co-Op", "Game Jam" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Gravity",
+            "subtitle": "Unity · 2D Puzzle",
+            "period": "Dec 2022",
+            "body": "A 2D puzzle game made for the Aztec Game Lab club's 3rd workshop of the semester at San Diego State University, built by a group of 5 people in 2 weeks.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/zaydjd/Workshop3-Team1",
+            "slug": "",
+            "tags": [ "Unity", "C#", "2D", "Puzzle", "Game Jam" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Mazes 3D",
+            "subtitle": "Unity · 3D Puzzle",
+            "period": "Dec 2021",
+            "body": "One of the first 3D games developed using Unity, built over two months with a group of 3 people. The objective is solving mazes in a 3D world.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Mazes-3D",
+            "slug": "",
+            "tags": [ "Unity", "C#", "3D", "Puzzle" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Chasing Bullets",
+            "subtitle": "Unity · 2D Shooter",
+            "period": "Jun 2021",
+            "body": "A 2D game made entirely solo using Unity — all art and code. The objective is to prevent aliens from reaching you with a limited amount of bullets.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Chasing-Bullets",
+            "slug": "",
+            "tags": [ "Unity", "C#", "2D", "Solo Project" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Rule Base Expert System",
+            "subtitle": "Unity · C# · AI",
+            "period": "Oct 2022",
+            "body": "A rule-based expert system consisting of a rule base and a database (map of the environment). After each move the system goes through if-then rules sequentially using forward and backward chaining to determine which rule is fired.",
+            "icon": "Psychology",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/CS657-A1",
+            "slug": "",
+            "tags": [ "Unity", "C#", "AI", "Expert System" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Genetic Algorithm to Optimize Two Paths",
+            "subtitle": "C# · AI Optimization",
+            "period": "Nov 2022",
+            "body": "Developed a program using genetic algorithms to solve a warehouse delivery optimization problem — first with a single warehouse delivering appliances to all homes, then extended to two warehouses.",
+            "icon": "Psychology",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/CS657-A3",
+            "slug": "",
+            "tags": [ "C#", "Genetic Algorithm", "AI", "Optimization" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Debugging using ImGui",
+            "subtitle": "Unity · C# · ImGui",
+            "period": "Nov 2022",
+            "body": "A 2D character controller built in Unity, using ImGui for debugging movement and projectile systems with real-time visual overlays.",
+            "icon": "BugReport",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/dominic-griffith/AGL_Team_6/tree/Andrick/Work",
+            "slug": "",
+            "tags": [ "Unity", "C#", "ImGui", "Debugging" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Flocking Behavior (Boids)",
+            "subtitle": "Unity · 3D Simulation",
+            "period": "Feb 2022",
+            "body": "A fully functional 3D simulation implementing flocking behavior with a GUI that switches between three modes: Lazy Flight, Circle a Tree, and Follow the Leader.",
+            "icon": "Flutter",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Boids",
+            "slug": "",
+            "tags": [ "Unity", "C#", "3D", "Simulation", "Boids" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Procedurally Generated Terrain Editor",
+            "subtitle": "Unity · 3D Tool",
+            "period": "Feb 2022",
+            "body": "A procedurally generated terrain editor that can create terrains for use in 3D games, with real-time parameter controls.",
+            "icon": "Terrain",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/PGT-Editor",
+            "slug": "",
+            "tags": [ "Unity", "C#", "3D", "Procedural Generation" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Procedurally Generated Mesh",
+            "subtitle": "Unity · 3D Simulation",
+            "period": "Feb 2022",
+            "body": "A procedurally generated mesh system that can be used to simulate waves for 3D games, with real-time parameter adjustments.",
+            "icon": "Waves",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/PGM",
+            "slug": "",
+            "tags": [ "Unity", "C#", "3D", "Procedural Generation" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Bank Application",
+            "subtitle": "Java · OOP",
+            "period": "May 2020",
+            "body": "An object-oriented bank application built with Java, designed to simulate a real-world banking system with account management features.",
+            "icon": "AccountBalance",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/CS108%20-%20Computer%20Programming/Bank",
+            "slug": "",
+            "tags": [ "Java", "OOP" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Cipher Application",
+            "subtitle": "Java · Cryptography",
+            "period": "Apr 2020",
+            "body": "A cipher application that can encrypt and decrypt text based on user-created keys. Encryption supports alphabet letters with configurable key-based substitution.",
+            "icon": "Lock",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/CS108%20-%20Computer%20Programming/Cipher",
+            "slug": "",
+            "tags": [ "Java", "Cryptography" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Donor Application",
+            "subtitle": "Java · OOP",
+            "period": "Mar 2020",
+            "body": "Inspired by the pandemic, this Donor application is a simulated donation page for people to donate supplies to help local hospitals in need of resources.",
+            "icon": "VolunteerActivism",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/CS108%20-%20Computer%20Programming/CS%20108%20-%20Donor%20Application",
+            "slug": "",
+            "tags": [ "Java", "OOP" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Snake Game",
+            "subtitle": "Java · 2D Game",
+            "period": "Jul 2019",
+            "body": "A classic snake game built with Java as a personal project — a fun recreation of the timeless arcade game.",
+            "icon": "SportsEsports",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/FUN%20-%20Projects/Snake%20Game",
+            "slug": "",
+            "tags": [ "Java", "2D", "Game Dev" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Object Detection in Minecraft",
+            "subtitle": "Python · TensorFlow",
+            "period": "Dec 2022",
+            "body": "3D object localization using TensorFlow applied to the game Minecraft, actively detecting and locating beds within the game world in real time.",
+            "icon": "Visibility",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/TFOD",
+            "slug": "",
+            "tags": [ "Python", "TensorFlow", "Object Detection", "Machine Learning" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Neural Network from Scratch",
+            "subtitle": "Python · Machine Learning",
+            "period": "Dec 2021",
+            "body": "A neural network implemented from scratch with one hidden layer, three inputs, and one output — no ML frameworks used, just pure Python and math.",
+            "icon": "Hub",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/blob/main/Code/Python/CS%20549%20-%20Machine%20Learning/A5%20-%20NN/A5.py",
+            "slug": "",
+            "tags": [ "Python", "Neural Network", "Machine Learning" ]
+          },
+          {
+            "name": "Projects",
+            "title": "8-Puzzle Solver using Recursion",
+            "subtitle": "Python · AI Search",
+            "period": "Sep 2021",
+            "body": "An 8-puzzle solver using recursive search algorithms in Python with an included UI for visualizing the solution process.",
+            "icon": "Extension",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/blob/Python-Work/Code/Jupyter/CS%20550%20-%20Artificial%20Intelligence/8%20Puzzle%20Solver/Assignment%202%20CS550%20Search%20-Clean-1.ipynb",
+            "slug": "",
+            "tags": [ "Python", "AI", "Search Algorithms", "Recursion" ]
+          },
+          {
+            "name": "Projects",
+            "title": "Sudoku Solver using Constraint Satisfaction",
+            "subtitle": "Python · AI",
+            "period": "Oct 2021",
+            "body": "A Sudoku solver using constraint satisfaction techniques to efficiently find the best solution to all solvable boards.",
+            "icon": "GridOn",
+            "imageUrl": "",
+            "embedUrl": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/blob/Python-Work/Code/Jupyter/CS%20550%20-%20Artificial%20Intelligence/Sudoku%20Puzzle%20Solver/Sudoku_Solve.ipynb",
+            "slug": "",
+            "tags": [ "Python", "AI", "Constraint Satisfaction" ]
           }
         ]
       }
