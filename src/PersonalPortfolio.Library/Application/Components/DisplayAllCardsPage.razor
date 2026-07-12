@@ -73,15 +73,22 @@ else if (_currentPage?.PageFormat is CardType.Project)
         </MudStack>
         <MudDivider Class="mb-8"/>
 
-        <MudGrid Spacing="4">
+        <MudGrid Spacing="4" Style="align-items:start;">
             @foreach (var project in _currentPage.Cards)
             {
                 <MudItem xs="12" sm="6" md="4">
-                    <MudCard Elevation="1" Class="rounded-xl d-flex flex-column" Style="height:100%;">
+                    <MudCard Elevation="1" Class="rounded-xl d-flex flex-column">
+                        @if (string.IsNullOrEmpty(project.ImageUrl) is false)
+                        {
+                            <MudCardMedia Image="@project.ImageUrl" Height="180" Class="rounded-t-xl" Style="object-fit:cover;"/>
+                        }
                         <MudCardContent Class="flex-grow-1">
-                            <MudAvatar Color="Color.Primary" Rounded="true" Class="mb-4">
-                                <MudIcon Icon="@IconMapper.GetIcon(project.Icon)"/>
-                            </MudAvatar>
+                            @if (string.IsNullOrEmpty(project.ImageUrl))
+                            {
+                                <MudAvatar Color="Color.Primary" Rounded="true" Class="mb-4" Size="Size.Large">
+                                    <MudIcon Icon="@IconMapper.GetIcon(project.Icon)"/>
+                                </MudAvatar>
+                            }
                             <MudText Typo="Typo.h6"><b>@project.Title</b></MudText>
                             @if (string.IsNullOrEmpty(project.Subtitle) is false)
                             {
