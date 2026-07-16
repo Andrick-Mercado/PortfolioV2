@@ -70,7 +70,15 @@
             "imageUrl": "",
             "embedUrl": "",
             "learnMoreUrl": "",
-            "tags": [ "C#", "Azure Functions", "Cosmos DB", "APIM", "ASP.NET Core", "Dapper", "Blazor" ]
+            "tags": [
+              "C#",
+              "Azure Functions",
+              "Cosmos DB",
+              "APIM",
+              "ASP.NET Core",
+              "Dapper",
+              "Blazor"
+            ]
           },
           {
             "name": "Experience",
@@ -82,7 +90,13 @@
             "imageUrl": "",
             "embedUrl": "",
             "learnMoreUrl": "",
-            "tags": [ "Unity", "C#", "VR", "Firebase", "Python" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "VR",
+              "Firebase",
+              "Python"
+            ]
           }
         ]
       },
@@ -103,7 +117,13 @@
             "imageUrl": "",
             "embedUrl": "",
             "learnMoreUrl": "",
-            "tags": [ "Data Structures", "Algorithms", "Machine Learning", "AI", "3D Game Programming" ]
+            "tags": [
+              "Data Structures",
+              "Algorithms",
+              "Machine Learning",
+              "AI",
+              "3D Game Programming"
+            ]
           }
         ]
       },
@@ -113,7 +133,18 @@
         "endpoint": "projects",
         "pageFormat": "Project",
         "icon": "RocketLaunch",
-        "FilterTags": [ "C#", ".NET MAUI", "SQLite", "Unity", "ASP.NET Core", "Machine Learning", "Simulation", "MCP", "AI", "Python" ],
+        "filterTags": [
+          "C#",
+          ".NET MAUI",
+          "SQLite",
+          "Unity",
+          "ASP.NET Core",
+          "Machine Learning",
+          "Simulation",
+          "MCP",
+          "AI",
+          "Python"
+        ],
         "cards": [
           {
             "name": "Projects",
@@ -124,9 +155,16 @@
             "icon": "Terminal",
             "imageUrl": "",
             "embedUrl": "",
-            "learnMoreUrl": "https://github.com/andrick-mercado",
+            "learnMoreUrl": "",
             "slug": "mcp-builder",
-            "tags": [ "C#", ".NET MAUI", "SQLite", "HtmlAgilityPack", "Selenium", "MCP" ],
+            "tags": [
+              "C#",
+              ".NET MAUI",
+              "SQLite",
+              "HtmlAgilityPack",
+              "Selenium",
+              "MCP"
+            ],
             "blogSections": [
               {
                 "title": "Overview",
@@ -138,13 +176,6 @@
               {
                 "title": "How It Works",
                 "body": "The application uses a hybrid scraping pipeline written entirely in C#. It first attempts fast HTML parsing using HtmlAgilityPack to extract content from static pages. If JavaScript-rendered content is detected, the pipeline automatically falls back to Selenium WebDriver for full browser-based scraping. This dual approach balances speed with coverage, ensuring that even modern single-page application documentation sites are fully captured. All scraped data is stored locally in an SQLite database for offline access and fast server generation.",
-                "imageUrl": "",
-                "imageCaption": "",
-                "sectionType": "Text"
-              },
-              {
-                "title": "Key Features",
-                "body": "• Automatic MCP server generation from any documentation URL\n• Hybrid scraping: HtmlAgilityPack for speed, Selenium for JS-heavy sites\n• Local SQLite storage for offline access and incremental updates\n• Cross-platform support via .NET MAUI (Windows, macOS)\n• Simple one-click server export with configurable endpoints\n• Built-in preview to verify scraped content before server generation",
                 "imageUrl": "",
                 "imageCaption": "",
                 "sectionType": "Text"
@@ -167,13 +198,19 @@
             "icon": "Web",
             "imageUrl": "images/ReusablePortfolio_1.jpg",
             "embedUrl": "",
-            "learnMoreUrl": "https://github.com/andrick-mercado",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Custom-Resume",
             "slug": "portfolio-website",
-            "tags": [ "Blazor", ".NET MAUI", "GitHub Pages", "React-Snap", "Dark Mode" ],
+            "tags": [
+              "Blazor",
+              ".NET MAUI",
+              "GitHub Pages",
+              "React-Snap",
+              "Dark Mode"
+            ],
             "blogSections": [
               {
                 "title": "Overview",
-                "body": "This portfolio website is a fully reusable, data-driven Blazor WebAssembly application designed so that anyone can fork the repository, update a single JSON file, and have a professional portfolio site deployed to GitHub Pages within minutes. The entire site — from experience and education to projects and skills — is controlled through websiteData.json, requiring zero code changes to personalize.",
+                "body": "This portfolio website is a fully reusable, data-driven Blazor WebAssembly application designed so that anyone can fork the repository, update a single JSON file, and have a professional portfolio site deployed to GitHub Pages within minutes. The entire site, from experience and education to projects and skills is controlled through websiteData.json, requiring zero code changes to personalize.",
                 "imageUrl": "",
                 "imageCaption": "",
                 "sectionType": "Text"
@@ -181,13 +218,6 @@
               {
                 "title": "Architecture & Design",
                 "body": "The project follows a clean architecture with two main layers: a Blazor WebAssembly front-end project and a shared .NET class library. The library contains all components, domain models, and infrastructure services, making it possible to reuse the same components in a .NET MAUI hybrid app for desktop deployment. MudBlazor provides the entire UI component library, ensuring a consistent, modern Material Design look with built-in dark mode support and responsive layouts.",
-                "imageUrl": "",
-                "imageCaption": "",
-                "sectionType": "Text"
-              },
-              {
-                "title": "Key Features",
-                "body": "• Fully data-driven: all content loaded from a single JSON file\n• Dark mode with persistent theme preference via Blazored.LocalStorage\n• Responsive design that works seamlessly on mobile, tablet, and desktop\n• Embedded PDF resume viewer with Google Drive integration\n• Dynamic project blog pages for detailed write-ups\n• GitHub Actions CI/CD with automatic deployment to GitHub Pages\n• SEO-friendly prerendering using React-Snap",
                 "imageUrl": "",
                 "imageCaption": "",
                 "sectionType": "Text"
@@ -212,7 +242,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/NotieTaker",
             "slug": "",
-            "tags": [ "C#", "ASP.NET Core", "Web" ]
+            "tags": [
+              "C#",
+              "ASP.NET Core",
+              "SQLite",
+              "Web"
+            ]
           },
           {
             "name": "Projects",
@@ -223,9 +258,53 @@
             "icon": "SportsEsports",
             "imageUrl": "images/pestilence_background.jpg",
             "embedUrl": "",
-            "learnMoreUrl": "",
-            "slug": "",
-            "tags": [ "Unity", "C#", "Agile", "Game Dev", "Team Project" ]
+            "learnMoreUrl": "https://github.com/AztecGameLab/LongTermGame6",
+            "slug": "pestilence-game",
+            "tags": [
+              "Unity",
+              "C#",
+              "Agile",
+              "Game Dev",
+              "Team Project"
+            ],
+            "blogSections": [
+              {
+                "title": "My Contribution",
+                "body": "Despite joining the team late on this 3-month semester project, I managed to make an impact on the programming team upon joining. I immediately assigned myself to bugs and or features on our task board on GitHub, with the majority of my contributions included implementing systems and bug fixing, with this I had to learn a new coding style from the team, as well as new systems already implemented before my arrival. This experience showed me how to learn from other code syntax's and essentially adapt to them, and though me the fundamentals on working on a bigger game with a bigger team of 30+.",
+                "imageUrl": "images/pestilence_background_02.jpg",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Systems Explored",
+                "body": "In this section I go over some of the systems I explored during the making of this game, I select the topics I found to be most interesting and that I found to be the most challenging.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Enemy AI",
+                "body": "In the image below, I'm showing an example of the sound-based artificial intelligence, where in the inspector can be seen the radius the enemy has for hearing footsteps and or objects thrown in that radius. The enemy shown, has three main states, patrol (going between waypoints), attack (when in the cone of vision), and sound (if an object is thrown that makes a sound or footsteps), with these states the only way to avoid the enemy is to get out of its range of vision and or crouch when near it to avoid making sounds when stepping. This AI state machine is implemented with a behavior tree, which makes the creation of states much simpler to add to.",
+                "imageUrl": "gifs/sound-ai.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Interaction System",
+                "body": "In the image below, I'm showing an example of the interaction system, which is composed of picking up items, throwing them, and scrolling them away or closer to the player. To elaborate on all the mechanics, the interaction system doesn't parent the object to the player, it does it differently by applying forces, in this case, the crate, the scroll wheel mechanic just adds to the z position of the game object to push it away or closer, and the throwing mechanic just applies forward velocity based on the direction the player faces and the momentum they have.Here I just included the work that I did on the project that I found the most interesting and at the same time challenging to work with.",
+                "imageUrl": "gifs/interaction-system.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Gameplay",
+                "body": "Gameplay",
+                "imageUrl": "",
+                "imageCaption": "Gameplay",
+                "embedUrl": "https://www.youtube.com/embed/NYqRCCpivRM",
+                "sectionType": "ExternalIframe"
+              }
+            ]
           },
           {
             "name": "Projects",
@@ -234,11 +313,76 @@
             "period": "Oct 2022",
             "body": "Implemented game architecture for an educational VR game using Unity, C#, and PlayMaker, supporting VR for Android and iOS via Google Cardboard.",
             "icon": "ViewInAr",
-            "imageUrl": "images/SR2S_Database_01.jpg",
+            "imageUrl": "images/safe-d_logo.png",
             "embedUrl": "",
             "learnMoreUrl": "",
-            "slug": "",
-            "tags": [ "Unity", "C#", "VR", "PlayMaker", "Android", "iOS" ]
+            "slug": "safe-routes-to-school-vr-app",
+            "tags": [
+              "Unity",
+              "C#",
+              "VR",
+              "PlayMaker",
+              "Android",
+              "iOS"
+            ],
+            "blogSections": [
+              {
+                "title": "My Contribution",
+                "body": "This VR game was made for the San Diego State Research Foundation, specifically for the project called Safe Routes to Schools, all the parts of the game were made by me, with the only exception being the artwork (which was purchased), this game is a first-person VR controlled phone game, where the goal is to educate younger children on walking safety in a realistic world. Some important systems used for the creation of this game are the database/saving, car AI, pedestrian AI, player controller, VR interactions via a single google cardboard button, and glance, personalized feedback.",
+                "imageUrl": "gifs/SR2S_World.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Systems Explored",
+                "body": "In this section I go over some of the systems I explored during the making of this game, I select the topics I found to be most interesting and that I found to be the most challenging.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Car AI",
+                "body": "The car artificial intelligence system was the most complex system implemented in this game. It needed to detect the player, pedestrians, other cars, and different intersections that required the car to stop, all while maneuvering through the city. With these requirements in mind, the car can honk at the player when the player is in front of it, but only if the player is on the road or crossing pedestrian intersections at red lights. With all these features already mentioned the objective of the car was to be as realistic as possible, and this car makes use of indicator lights as well as brake lights. Some of the code for this system is provided below.",
+                "imageUrl": "gifs/SR2S_Car_AI_01.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Pedestrian AI",
+                "body": "The pedestrian artificial intelligence system was much simpler to implement. It only needs to traverse through the city by selecting random points around it, all while avoiding other pedestrians and cars. Besides traveling they were required to follow safe walking behavior and for this, they needed to interact with the world around them, stopping lights and all the other intersections in the game.",
+                "imageUrl": "gifs/SR2S_Ped_AI_02.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Database",
+                "body": "The database used in this game is made using the firebase API for unity, the data collected was divided by school grade and sex, in order to analyze the data on different factors. The use of this API, was to measure the in-game performance of the players, in other words, we wanted to see if this tool was helping players improve their walking behavior without forcing or altering the knowledge that they had prior to playing this tool. Some of the code for this implementation is provided below.",
+                "imageUrl": "images/SR2S_Database_01.jpg",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Player Controller",
+                "body": "The player controller is the system in charge of moving the player around this simulated world. The controller works by making use of the gyroscope sensor, on the phone to keep track of where the player is looking relative to our game, and the movement depends on where the player is looking at. When using google cardboard only has one button, which essentially presses the screen when used, with this in mind whenever the player holds the button the player will move in the direction they are looking at.",
+                "imageUrl": "gifs/SR2S_Player_Controller_01.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Google Cardboard",
+                "body": "This game makes use of the Google cardboard SDK, this game's main objective was to simulate a real-world that players could use to learn safe walking behavior from the comfort of their homes, and google cardboard being a relatively accessible product, we decided to make use of its SDK for this project. An example is shown below of how it looks on a Samsung Galaxy S10e.",
+                "imageUrl": "gifs/SR2S_Cardboard_01.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Enemy AI",
+                "body": "",
+                "imageUrl": "gifs/sound-ai.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              }
+            ]
           },
           {
             "name": "Projects",
@@ -251,7 +395,13 @@
             "embedUrl": "",
             "learnMoreUrl": "",
             "slug": "",
-            "tags": [ "Unity", "C#", "3D", "Multiplayer", "Open World" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "3D",
+              "Multiplayer",
+              "Open World"
+            ]
           },
           {
             "name": "Projects",
@@ -264,7 +414,12 @@
             "embedUrl": "",
             "learnMoreUrl": "",
             "slug": "",
-            "tags": [ "Unity", "C#", "3D", "Adventure" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "3D",
+              "Adventure"
+            ]
           },
           {
             "name": "Projects",
@@ -277,7 +432,13 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Platformer-Co-Op",
             "slug": "",
-            "tags": [ "Unity", "C#", "2D", "Co-Op", "Game Jam" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "2D",
+              "Co-Op",
+              "Game Jam"
+            ]
           },
           {
             "name": "Projects",
@@ -290,7 +451,13 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/zaydjd/Workshop3-Team1",
             "slug": "",
-            "tags": [ "Unity", "C#", "2D", "Puzzle", "Game Jam" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "2D",
+              "Puzzle",
+              "Game Jam"
+            ]
           },
           {
             "name": "Projects",
@@ -303,7 +470,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Mazes-3D",
             "slug": "",
-            "tags": [ "Unity", "C#", "3D", "Puzzle" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "3D",
+              "Puzzle"
+            ]
           },
           {
             "name": "Projects",
@@ -316,7 +488,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Chasing-Bullets",
             "slug": "",
-            "tags": [ "Unity", "C#", "2D", "Solo Project" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "2D",
+              "Solo Project"
+            ]
           },
           {
             "name": "Projects",
@@ -329,7 +506,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/CS657-A1",
             "slug": "",
-            "tags": [ "Unity", "C#", "AI", "Expert System" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "AI",
+              "Expert System"
+            ]
           },
           {
             "name": "Projects",
@@ -342,7 +524,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/CS657-A3",
             "slug": "",
-            "tags": [ "C#", "Genetic Algorithm", "AI", "Optimization" ]
+            "tags": [
+              "C#",
+              "Genetic Algorithm",
+              "AI",
+              "Optimization"
+            ]
           },
           {
             "name": "Projects",
@@ -355,7 +542,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/dominic-griffith/AGL_Team_6/tree/Andrick/Work",
             "slug": "",
-            "tags": [ "Unity", "C#", "ImGui", "Debugging" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "ImGui",
+              "Debugging"
+            ]
           },
           {
             "name": "Projects",
@@ -368,7 +560,13 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Boids",
             "slug": "",
-            "tags": [ "Unity", "C#", "3D", "Simulation", "Boids" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "3D",
+              "Simulation",
+              "Boids"
+            ]
           },
           {
             "name": "Projects",
@@ -381,7 +579,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/PGT-Editor",
             "slug": "",
-            "tags": [ "Unity", "C#", "3D", "Procedural Generation" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "3D",
+              "Procedural Generation"
+            ]
           },
           {
             "name": "Projects",
@@ -394,7 +597,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/PGM",
             "slug": "",
-            "tags": [ "Unity", "C#", "3D", "Procedural Generation" ]
+            "tags": [
+              "Unity",
+              "C#",
+              "3D",
+              "Procedural Generation"
+            ]
           },
           {
             "name": "Projects",
@@ -407,7 +615,10 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/CS108%20-%20Computer%20Programming/Bank",
             "slug": "",
-            "tags": [ "Java", "OOP" ]
+            "tags": [
+              "Java",
+              "OOP"
+            ]
           },
           {
             "name": "Projects",
@@ -420,7 +631,10 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/CS108%20-%20Computer%20Programming/Cipher",
             "slug": "",
-            "tags": [ "Java", "Cryptography" ]
+            "tags": [
+              "Java",
+              "Cryptography"
+            ]
           },
           {
             "name": "Projects",
@@ -433,7 +647,10 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/CS108%20-%20Computer%20Programming/CS%20108%20-%20Donor%20Application",
             "slug": "",
-            "tags": [ "Java", "OOP" ]
+            "tags": [
+              "Java",
+              "OOP"
+            ]
           },
           {
             "name": "Projects",
@@ -446,7 +663,11 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/tree/main/Code/Java/FUN%20-%20Projects/Snake%20Game",
             "slug": "",
-            "tags": [ "Java", "2D", "Game Dev" ]
+            "tags": [
+              "Java",
+              "2D",
+              "Game Dev"
+            ]
           },
           {
             "name": "Projects",
@@ -459,7 +680,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/TFOD",
             "slug": "",
-            "tags": [ "Python", "TensorFlow", "Object Detection", "Machine Learning" ]
+            "tags": [
+              "Python",
+              "TensorFlow",
+              "Object Detection",
+              "Machine Learning"
+            ]
           },
           {
             "name": "Projects",
@@ -472,7 +698,11 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/blob/main/Code/Python/CS%20549%20-%20Machine%20Learning/A5%20-%20NN/A5.py",
             "slug": "",
-            "tags": [ "Python", "Neural Network", "Machine Learning" ]
+            "tags": [
+              "Python",
+              "Neural Network",
+              "Machine Learning"
+            ]
           },
           {
             "name": "Projects",
@@ -485,7 +715,12 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/blob/Python-Work/Code/Jupyter/CS%20550%20-%20Artificial%20Intelligence/8%20Puzzle%20Solver/Assignment%202%20CS550%20Search%20-Clean-1.ipynb",
             "slug": "",
-            "tags": [ "Python", "AI", "Search Algorithms", "Recursion" ]
+            "tags": [
+              "Python",
+              "AI",
+              "Search Algorithms",
+              "Recursion"
+            ]
           },
           {
             "name": "Projects",
@@ -498,7 +733,11 @@
             "embedUrl": "",
             "learnMoreUrl": "https://github.com/Andrick-Mercado/Andrick-Mercado/blob/Python-Work/Code/Jupyter/CS%20550%20-%20Artificial%20Intelligence/Sudoku%20Puzzle%20Solver/Sudoku_Solve.ipynb",
             "slug": "",
-            "tags": [ "Python", "AI", "Constraint Satisfaction" ]
+            "tags": [
+              "Python",
+              "AI",
+              "Constraint Satisfaction"
+            ]
           }
         ]
       }
