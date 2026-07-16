@@ -103,6 +103,7 @@ public class BlogSection
     public string Body { get; set; }
     public string ImageUrl { get; set; }
     public string ImageCaption { get; set; }
+    public string EmbedUrl { get; set; }
 
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public BlogSectionType SectionType { get; set; }
@@ -112,7 +113,8 @@ public enum BlogSectionType
 {
     Text,
     Image,
-    TextWithImage
+    TextWithImage,
+    ExternalIframe
 }
 
 #region Enums

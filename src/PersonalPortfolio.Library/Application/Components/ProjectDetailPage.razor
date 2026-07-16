@@ -138,6 +138,17 @@ else
                     </MudStack>
                 </MudPaper>
             }
+            else if (section.SectionType == BlogSectionType.ExternalIframe)
+            {
+                <MudPaper Elevation="1" Class="rounded-xl overflow-hidden mb-6">
+                    @if (string.IsNullOrEmpty(section.EmbedUrl) is false)
+                    {
+                        <MudDivider/>
+                        <iframe src="@GetEmbedUrl(section.EmbedUrl)" title="@section.Title" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen
+                                style="display:block; width:100%; height:60vh; border:none;"></iframe>
+                    }
+                </MudPaper>
+            }
         }
     </MudContainer>
 }
