@@ -167,7 +167,7 @@
             ],
             "blogSections": [
               {
-                "title": "Overview",
+                "title": "Overview / The Problem",
                 "body": "MCP Builder App is a cross-platform desktop tool built with .NET MAUI that empowers developers and AI practitioners to generate Model Context Protocol (MCP) servers from any documentation website. Many popular libraries and frameworks lack native MCP support, making it difficult for AI agents like Claude or Copilot to interact with their documentation programmatically. MCP Builder bridges that gap by scraping documentation sites and producing a fully functional MCP server that AI agents can query.",
                 "imageUrl": "",
                 "imageCaption": "",
@@ -181,7 +181,7 @@
                 "sectionType": "Text"
               },
               {
-                "title": "Technical Stack",
+                "title": "Architecture & Design",
                 "body": "The project is built on .NET MAUI for the desktop UI, leveraging the MVVM pattern for clean separation of concerns. The scraping engine uses HtmlAgilityPack and Selenium WebDriver, with a strategy pattern to switch between them seamlessly. Data persistence is handled through SQLite with a lightweight repository layer. The generated MCP servers follow the official Model Context Protocol specification, ensuring compatibility with any MCP-compliant AI agent.",
                 "imageUrl": "",
                 "imageCaption": "",
@@ -269,7 +269,7 @@
             ],
             "blogSections": [
               {
-                "title": "My Contribution",
+                "title": "Overview",
                 "body": "Despite joining the team late on this 3-month semester project, I managed to make an impact on the programming team upon joining. I immediately assigned myself to bugs and or features on our task board on GitHub, with the majority of my contributions included implementing systems and bug fixing, with this I had to learn a new coding style from the team, as well as new systems already implemented before my arrival. This experience showed me how to learn from other code syntax's and essentially adapt to them, and though me the fundamentals on working on a bigger game with a bigger team of 30+.",
                 "imageUrl": "images/pestilence_background_02.jpg",
                 "imageCaption": "",
@@ -298,9 +298,9 @@
               },
               {
                 "title": "Gameplay",
-                "body": "Gameplay",
+                "body": "",
                 "imageUrl": "",
-                "imageCaption": "Gameplay",
+                "imageCaption": "",
                 "embedUrl": "https://www.youtube.com/embed/NYqRCCpivRM",
                 "sectionType": "ExternalIframe"
               }
@@ -327,7 +327,7 @@
             ],
             "blogSections": [
               {
-                "title": "My Contribution",
+                "title": "Overview",
                 "body": "This VR game was made for the San Diego State Research Foundation, specifically for the project called Safe Routes to Schools, all the parts of the game were made by me, with the only exception being the artwork (which was purchased), this game is a first-person VR controlled phone game, where the goal is to educate younger children on walking safety in a realistic world. Some important systems used for the creation of this game are the database/saving, car AI, pedestrian AI, player controller, VR interactions via a single google cardboard button, and glance, personalized feedback.",
                 "imageUrl": "gifs/SR2S_World.gif",
                 "imageCaption": "",
@@ -376,11 +376,20 @@
                 "sectionType": "TextWithImage"
               },
               {
-                "title": "Enemy AI",
-                "body": "",
-                "imageUrl": "gifs/sound-ai.gif",
+                "title": "Graphs",
+                "body": "All the data below was collected from Feaster Charter School students, thanks to their cooperation we managed to test the game and measure its student's performance when using this educational game. Below is data collected from 26 students that volunteered to be a part of the game testing for this application. These graphs are completely intractable, the name of the graphs constrain pre-video and after-video, this refers to the score data collected prior to the educational videos we provide to the students and the scores collected after watching these videos. NOTE: data might not show properly on small screens.",
+                "imageUrl": "",
                 "imageCaption": "",
-                "sectionType": "TextWithImage"
+                "embedUrl": "graphs/Graph_Time_On_Each_Level_Pre_and_After_Video.html",
+                "sectionType": "ExternalIframe"
+              },
+              {
+                "title": "Game Design Document",
+                "body": "Here you can find the documented work flow, for the development of this game. NOTE: File may not work correctly on mobile devices use",
+                "imageUrl": "",
+                "imageCaption": "",
+                "embedUrl": "https://app.milanote.com/1OK8D11fgOhJ2y?p=CcWnCc92TTL",
+                "sectionType": "ExternalIframe"
               }
             ]
           },
@@ -393,14 +402,51 @@
             "icon": "Rocket",
             "imageUrl": "images/SpaceCraft_background.jpg",
             "embedUrl": "",
-            "learnMoreUrl": "",
-            "slug": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/SpaceCraft",
+            "slug": "spacecraft-game",
             "tags": [
               "Unity",
               "C#",
               "3D",
               "Multiplayer",
               "Open World"
+            ],
+            "blogSections": [
+              {
+                "title": "Overview",
+                "body": "In this project me and 3 other of my classmates worked on a 3D game, where the core mechanics we wanted to implement in the game were multiplayer, saving through the use of databases, as well as user authentication, all whiting a 3D open-world game. Some features were taken out as they were simply too much for the user experience, systems that were taken out were databases and user authentication.",
+                "imageUrl": "gifs/spacecraft_world_generation.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Systems Explored",
+                "body": "In this section I go over some of the systems I explored during the making of this game, I select the topics I found to be most interesting and that I found to be the most challenging.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Multiplayer System",
+                "body": "When it came to deciding on how to move on with multiplayer, we chose to use Photon engine to facilitate the process. When it came to connecting all players to lobbies, we decided to go with room creation and joining, thus the player can join any open room on the room list menu, once a player joins all the procedurally generated items are loaded the same based on seeds, this includes the interactable items. The inventory is also shared for all players, as well as when they join. Once an item has collected a photon PunRPC is called to sync everyone's interactable in the current room, this is the same for quests and inventory of the player.",
+                "imageUrl": "gifs/spacecraft_multiplayer.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Interaction & Inventory System",
+                "body": "For the interaction system, it shoots a raycast with a given range and a layer mask and attempts to find any objects or interactable that are in the intractable layers, and once it finds an object with such layer, it activates its panel and displays the information about the object, here the objects are versatile as they are made using scriptable objects, which allows us to make many more intractable objects, with customizable settings such as time to interact and obvious what it is. Once an interactable object is collected using the selected collection key, the object calls destroy as well as updating the quest system while using the PunRPC attribute. For the inventory system I implemented using a stack-like algorithm, essentially added inventory items and stacked them if there was already one in the inventory, and expanded accordingly to the number of items, all items in this game were minerals, flint, and trees.",
+                "imageUrl": "gifs/spacecraft_interaction.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Quest System",
+                "body": "The quest system is simple but effective, as we didn't necessarily implement a vast amount of quests, but the system can still be expanded to other quests even bosses, although we didn't implement this feature it was in our wishlist for this game. There was also a way for the player to see the active quest and know when they finished it.",
+                "imageUrl": "gifs/spacecraft_quests.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              }
             ]
           },
           {
@@ -412,13 +458,44 @@
             "icon": "SportsEsports",
             "imageUrl": "images/Traversial_background.jpg",
             "embedUrl": "",
-            "learnMoreUrl": "",
-            "slug": "",
+            "learnMoreUrl": "https://github.com/Andrick-Mercado/Traversial",
+            "slug": "traversial-game",
             "tags": [
               "Unity",
               "C#",
               "3D",
               "Adventure"
+            ],
+            "blogSections": [
+              {
+                "title": "Overview",
+                "body": "This game was made for a game jam called AGL Summer Game Jam 2022, part of the SDSU Aztec Game Lab club, all the parts of the game were made by me, with the only exception being the artwork, this game is a short 3rd perspective stealth game, where the goal is to escape out of this complex space building you are trapped in. Some important systems used for the making of this game are the enemy AI, and player controller.",
+                "imageUrl": "gifs/traversial_gameplay.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Systems Explored",
+                "body": "In this section I go over some of the systems I explored during the making of this game, I select the topics I found to be most interesting and that I found to be the most challenging.",
+                "imageUrl": "",
+                "imageCaption": "",
+                "sectionType": "Text"
+              },
+              {
+                "title": "Enemy AI",
+                "body": "For the making of this game, the enemy AI had to be well done, to produce better gameplay for the player, and thus I decided to use a behavioral tree with 3 states, patrolling between waypoints, hearing sound essentially when the enemy hears a player, specifically the footsteps made when a player runs and or lands when jumping, lastly is the attack state, which is just based on line of side and if the player is close enough, as well as being synchronized with the animation. Below are some gifs demonstrating the enemy AI in action, hearing, visual states, and attack states.",
+                "imageUrl": "gifs/traversial_enemy_ai_alt_02.gif",
+                "imageCaption": "",
+                "sectionType": "TextWithImage"
+              },
+              {
+                "title": "Traversial on Your Browser",
+                "body": "",
+                "imageUrl": "",
+                "imageCaption": "",
+                "embedUrl": "https://itch.io/embed-upload/6670635?color=333333",
+                "sectionType": "ExternalIframe"
+              }
             ]
           },
           {
