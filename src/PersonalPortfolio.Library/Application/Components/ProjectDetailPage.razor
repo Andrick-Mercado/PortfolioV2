@@ -141,9 +141,19 @@ else
             else if (section.SectionType == BlogSectionType.ExternalIframe)
             {
                 <MudPaper Elevation="1" Class="rounded-xl overflow-hidden mb-6">
+                    <MudStack Class="pa-6 pa-md-8" Spacing="2">
+                        @if (string.IsNullOrEmpty(section.Title) is false)
+                        {
+                            <MudText Typo="Typo.h5"><b>@section.Title</b></MudText>
+                        }
+                        @if (string.IsNullOrEmpty(section.Body) is false)
+                        {
+                            <MudText Typo="Typo.body1" Style="line-height:1.8;">@section.Body</MudText>
+                        }
+                    </MudStack>
+
                     @if (string.IsNullOrEmpty(section.EmbedUrl) is false)
                     {
-                        <MudDivider/>
                         <iframe src="@GetEmbedUrl(section.EmbedUrl)" title="@section.Title" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen
                                 style="display:block; width:100%; height:60vh; border:none;"></iframe>
                     }
