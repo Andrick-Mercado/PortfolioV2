@@ -101,7 +101,7 @@ else if (_currentPage?.PageFormat is CardType.Project)
                     <MudCard Elevation="1" Class="rounded-xl d-flex flex-column">
                         @if (string.IsNullOrEmpty(project.ImageUrl) is false)
                         {
-                            <MudCardMedia Image="@project.ImageUrl" Height="180" Class="rounded-t-xl" Style="object-fit:cover;"/>
+                            <MudCardMedia Image="@project.ImageUrl" Height="180" Class="rounded-t-xl" Style="object-fit:cover;" UserAttributes="@(new Dictionary<string, object> { { "loading", "lazy" } })"/>
                         }
                         <MudCardContent Class="flex-grow-1">
                             @if (string.IsNullOrEmpty(project.ImageUrl))
