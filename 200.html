@@ -14,10 +14,11 @@
             const preferencesKey = 'Preferences';
             try {
                 const preferences = localStorage.getItem(preferencesKey);
+                console.log(preferences);
                 if (preferences) {
                     const prefs = JSON.parse(preferences);
                     console.log(prefs);
-                    if (prefs.darkMode) {
+                    if (prefs.DarkMode) {
                         // Add dark mode marker to html element so MudBlazor can apply dark theme
                         document.documentElement.setAttribute('data-theme-initialized', 'true');
                         document.documentElement.setAttribute('data-dark-mode', 'true');
