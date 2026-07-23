@@ -8,6 +8,26 @@
     <base href="/"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet"/>
+    <script>
+        // Initialize theme before Blazor renders to prevent flash of incorrect theme
+        (function() {
+            const preferencesKey = 'Preferences';
+            try {
+                const preferences = localStorage.getItem(preferencesKey);
+                if (preferences) {
+                    const prefs = JSON.parse(preferences);
+                    if (prefs.darkMode) {
+                        // Add dark mode marker to html element so MudBlazor can apply dark theme
+                        document.documentElement.setAttribute('data-theme-initialized', 'true');
+                        document.documentElement.setAttribute('data-dark-mode', 'true');
+                    }
+                }
+            } catch (e) {
+                // Silently fail if localStorage is not accessible
+                console.warn('Theme initialization failed:', e);
+            }
+        })();
+    </script>
 </head>
 
 <body>
