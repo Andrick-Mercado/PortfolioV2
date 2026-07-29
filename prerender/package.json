@@ -14,13 +14,7 @@
     ],
     "puppeteerExecutablePath": null,
     "headless": true,
-    "waitFor": 6000,
-    "viewport": {
-      "width": 1440,
-      "height": 900
-    },
-    "fixWebpackChunksIssue": false,
-    "fixInsertRule": true,
+    "waitFor": 1000,
     "externalServer": false,
     "skipThirdPartyRequests": true,
     "cacheAjaxRequests": false,
