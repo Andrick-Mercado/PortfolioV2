@@ -8,28 +8,92 @@
     <base href="/PortfolioV2/"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet"/>
-    <script>
-        // Initialize theme before Blazor renders to prevent flash of incorrect theme
-        (function() {
-            const preferencesKey = 'Preferences';
+    <!--<script>
+        (function () {
+            var preferencesKey = 'Preferences';
+            var isDark = false;
+
             try {
-                const preferences = localStorage.getItem(preferencesKey);
-                console.log(preferences);
-                if (preferences) {
-                    const prefs = JSON.parse(preferences);
-                    console.log(prefs);
-                    if (prefs.DarkMode) {
-                        // Add dark mode marker to html element so MudBlazor can apply dark theme
-                        document.documentElement.setAttribute('data-theme-initialized', 'true');
-                        document.documentElement.setAttribute('data-dark-mode', 'true');
-                    }
+                var stored = localStorage.getItem(preferencesKey);
+                if (stored) {
+                    isDark = !!JSON.parse(stored).DarkMode;
                 }
             } catch (e) {
-                // Silently fail if localStorage is not accessible
                 console.warn('Theme initialization failed:', e);
             }
+
+            // ⚠️ These are MudBlazor's stock dark defaults, since I only have your
+            // LIGHT palette from the snapshot. If ThemeManager.cs defines a custom
+            // PaletteDark, swap these values to match it exactly.
+            var darkPalette = {
+                '&#45;&#45;mud-palette-black': 'rgba(39,44,52,1)',
+                '&#45;&#45;mud-palette-text-primary': 'rgba(255,255,255,0.70)',
+                '&#45;&#45;mud-palette-text-secondary': 'rgba(255,255,255,0.50)',
+                '&#45;&#45;mud-palette-surface': '#373740',
+                '&#45;&#45;mud-palette-background': '#32333d',
+                '&#45;&#45;mud-palette-background-gray': '#27272f',
+                '&#45;&#45;mud-palette-drawer-background': '#27272f',
+                '&#45;&#45;mud-palette-drawer-text': 'rgba(255,255,255,0.50)',
+                '&#45;&#45;mud-palette-drawer-icon': 'rgba(255,255,255,0.50)',
+                '&#45;&#45;mud-palette-appbar-background': '#27272f',
+                '&#45;&#45;mud-palette-appbar-text': 'rgba(255,255,255,0.70)',
+                '&#45;&#45;mud-palette-lines-default': 'rgba(255,255,255,0.12)',
+                '&#45;&#45;mud-palette-divider': 'rgba(255,255,255,0.12)',
+                '&#45;&#45;mud-native-html-color-scheme': 'dark'
+            };
+
+            var root = document.documentElement;
+
+            // Single source of truth: apply or clear every property, every time.
+            // Called at boot AND on every toggle, so nothing is ever left stale.
+            window.themeInterop = {
+                setDarkMode: function (dark) {
+                    if (dark) {
+                        root.setAttribute('data-dark-mode', 'true');
+                        for (var prop in darkPalette) {
+                            if (Object.prototype.hasOwnProperty.call(darkPalette, prop)) {
+                                root.style.setProperty(prop, darkPalette[prop]);
+                            }
+                        }
+                    } else {
+                        root.removeAttribute('data-dark-mode');
+                        for (var p in darkPalette) {
+                            if (Object.prototype.hasOwnProperty.call(darkPalette, p)) {
+                                root.style.removeProperty(p);
+                            }
+                        }
+                    }
+                }
+            };
+
+            if (isDark) {
+                window.themeInterop.setDarkMode(true);
+            }
         })();
-    </script>
+    </script>-->
+
+<!--    <script>-->
+<!--        // Initialize theme before Blazor renders to prevent flash of incorrect theme-->
+<!--        (function() {-->
+<!--            const preferencesKey = 'Preferences';-->
+<!--            try {-->
+<!--                const preferences = localStorage.getItem(preferencesKey);-->
+<!--                console.log(preferences);-->
+<!--                if (preferences) {-->
+<!--                    const prefs = JSON.parse(preferences);-->
+<!--                    console.log(prefs);-->
+<!--                    if (prefs.DarkMode) {-->
+<!--                        // Add dark mode marker to html element so MudBlazor can apply dark theme-->
+<!--                        document.documentElement.setAttribute('data-theme-initialized', 'true');-->
+<!--                        document.documentElement.setAttribute('data-dark-mode', 'true');-->
+<!--                    }-->
+<!--                }-->
+<!--            } catch (e) {-->
+<!--                // Silently fail if localStorage is not accessible-->
+<!--                console.warn('Theme initialization failed:', e);-->
+<!--            }-->
+<!--        })();-->
+<!--    </script>-->
 </head>
 
 <body>
