@@ -1,49 +1,17 @@
-<!DOCTYPE html><html lang="en" data-theme-initialized="true" data-dark-mode="false" style="--blazor-load-percentage:100%;--blazor-load-percentage-text:&quot"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><base href="/PortfolioV2/"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet"><link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet"><script>// Initialize theme before Blazor renders to prevent flash of incorrect theme.
-        // Overrides MudBlazor's CSS custom properties directly (inline style on <html>
-        // always wins over any stylesheet, including the theme <style> block baked
-        // into the static react-snap snapshot).
-        (function () {
-            var preferencesKey = 'Preferences';
-
-            // ⚠️ These must match your MudTheme's PaletteDark values exactly.
-            // Verify variable names via devtools (search the injected <style> for
-            // "--mud-palette") — they've shifted slightly across MudBlazor versions.
-            var darkPalette = {
-                '--mud-palette-black': '#27272f',
-                '--mud-palette-background': '#32333d',
-                '--mud-palette-background-gray': '#27272f',
-                '--mud-palette-surface': '#373740',
-                '--mud-palette-drawer-background': '#27272f',
-                '--mud-palette-drawer-text': 'rgba(255,255,255,0.50)',
-                '--mud-palette-drawer-icon': 'rgba(255,255,255,0.50)',
-                '--mud-palette-appbar-background': '#27272f',
-                '--mud-palette-appbar-text': 'rgba(255,255,255,0.70)',
-                '--mud-palette-text-primary': 'rgba(255,255,255,0.70)',
-                '--mud-palette-text-secondary': 'rgba(255,255,255,0.50)',
-                '--mud-palette-lines-default': 'rgba(255,255,255,0.12)',
-                '--mud-palette-divider': 'rgba(255,255,255,0.12)'
-            };
-
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage:100%;--blazor-load-percentage-text:&quot"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><base href="/PortfolioV2/"><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet"><link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet"><script>// Initialize theme before Blazor renders to prevent flash of incorrect theme
+        (function() {
+            const preferencesKey = 'Preferences';
             try {
-                var stored = localStorage.getItem(preferencesKey);
-                var isDark = false;
-
-                if (stored) {
-                    var prefs = JSON.parse(stored);
-                    isDark = !!prefs.DarkMode;
-                }
-
-                var root = document.documentElement;
-                root.setAttribute('data-theme-initialized', 'true');
-                root.setAttribute('data-dark-mode', isDark ? 'true' : 'false');
-
-                if (isDark) {
-                    for (var prop in darkPalette) {
-                        if (Object.prototype.hasOwnProperty.call(darkPalette, prop)) {
-                            root.style.setProperty(prop, darkPalette[prop]);
-                        }
+                const preferences = localStorage.getItem(preferencesKey);
+                console.log(preferences);
+                if (preferences) {
+                    const prefs = JSON.parse(preferences);
+                    console.log(prefs);
+                    if (prefs.DarkMode) {
+                        // Add dark mode marker to html element so MudBlazor can apply dark theme
+                        document.documentElement.setAttribute('data-theme-initialized', 'true');
+                        document.documentElement.setAttribute('data-dark-mode', 'true');
                     }
-                    root.style.colorScheme = 'dark';
                 }
             } catch (e) {
                 // Silently fail if localStorage is not accessible
