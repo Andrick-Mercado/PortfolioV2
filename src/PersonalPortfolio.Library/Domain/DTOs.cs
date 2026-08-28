@@ -89,6 +89,13 @@ public class Card
     public Icon Icon { get; set; }
 
     public string ImageUrl { get; set; }
+
+    /// <summary>Path to an MP4 clip; the WebM sibling is derived from it.</summary>
+    public string VideoUrl { get; set; }
+
+    /// <summary>Still frame shown before the clip is played.</summary>
+    public string PosterUrl { get; set; }
+
     public string EmbedUrl { get; set; }
     public string DownloadUrl { get; set; }
     public string LearnMoreUrl { get; set; }
@@ -102,6 +109,13 @@ public class BlogSection
     public string Title { get; set; }
     public string Body { get; set; }
     public string ImageUrl { get; set; }
+
+    /// <summary>Path to an MP4 clip; the WebM sibling is derived from it.</summary>
+    public string VideoUrl { get; set; }
+
+    /// <summary>Still frame shown before the clip is played.</summary>
+    public string PosterUrl { get; set; }
+
     public string ImageCaption { get; set; }
     public string EmbedUrl { get; set; }
 

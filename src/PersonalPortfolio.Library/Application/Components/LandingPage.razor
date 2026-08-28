@@ -10,7 +10,9 @@
         <MudGrid Class="align-center" Spacing="6">
             <MudItem xs="12" sm="4" Class="d-flex justify-center">
                 <MudAvatar Style="height:220px; width:220px; font-size:2rem;" Elevation="4">
-                    <MudImage Src="@_mainPage?.ImageRoute" Alt="Headshot" ObjectFit="ObjectFit.Cover" Style="height:100%; width:100%;"/>
+                    @* The only eagerly loaded image on the site: it is the largest element above
+                       the fold, so lazy-loading it would delay the largest contentful paint. *@
+                    <MediaFrame Src="@_mainPage?.ImageRoute" Alt="Headshot" Eager="true" Height="220"/>
                 </MudAvatar>
             </MudItem>
 
@@ -92,8 +94,15 @@
                     }
                 </MudToolBar>
                 <MudDivider/>
-                <iframe src="@_resume.EmbedUrl" title="@_resume.Title" allow="autoplay"
-                        style="display:block; width:100%; height:80vh; border:none;"></iframe>
+                <DeferredEmbed Src="@_resume.EmbedUrl" Title="@_resume.Title"
+                               Description="Hosted on Google Drive. The viewer is a few megabytes, so it loads when you scroll here or ask for it."
+                               Height="80vh"
+                               Icon="@IconMapper.GetIcon(_resume.Icon)"
+                               ActionText="View resume"
+                               ActionIcon="@Icons.Material.Filled.Description"
+                               Allow="autoplay"
+                               DownloadUrl="@_resume.DownloadUrl"
+                               OpenUrl="@_resume.LearnMoreUrl"/>
             </MudPaper>
         }
 
