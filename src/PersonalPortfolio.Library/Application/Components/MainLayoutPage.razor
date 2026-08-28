@@ -79,6 +79,9 @@ else
 
 
 <MudThemeProvider @bind-IsDarkMode="@IsDarkCurrentTheme" Theme="@_currentTheme"/>
+@* Renders the dark palette scoped to :root.mud-preload-dark so the prerendered snapshot can be shown
+   in dark mode by the pre-paint script in index.html, before this app has booted. *@
+<MudThemeProvider Theme="@_preloadDarkTheme" IsDarkMode="true" ObserveSystemDarkModeChange="false" DefaultScrollbar="true"/>
 <MudPopoverProvider/>
 <MudDialogProvider/>
 <MudSnackbarProvider/>

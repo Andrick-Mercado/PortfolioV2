@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using MudBlazor;
 using PersonalPortfolio.Library.Domain;
 using PersonalPortfolio.Library.Infrastructure;
@@ -21,6 +22,22 @@ public partial class MainLayoutPage
         StateHasChanged();
     }
 
+    /// <summary>
+    /// The pre-paint script in index.html forces the dark palette on the prerendered markup while the app boots.
+    /// Once the real theme provider has rendered the resolved preference it has to be released, otherwise its
+    /// higher specificity would keep the app dark after the user switches back to light mode.
+    /// </summary>
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_hasLoaded is false || _hasReleasedPreloadTheme)
+        {
+            return;
+        }
+
+        _hasReleasedPreloadTheme = true;
+        await JsRuntime.InvokeVoidAsync("document.documentElement.classList.remove", ThemeManager.PreloadDarkClass);
+    }
+
     private void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
@@ -35,7 +52,9 @@ public partial class MainLayoutPage
     #region Private fields
 
     private MudTheme _currentTheme => ThemeManager.GetMudTheme(_configurations?.WebsiteTheme ?? WebsiteTheme.Blue);
+    private MudTheme _preloadDarkTheme => ThemeManager.GetPreloadDarkTheme(_configurations?.WebsiteTheme ?? WebsiteTheme.Blue);
     private bool _hasLoaded;
+    private bool _hasReleasedPreloadTheme;
     private WebsiteData _websiteDatabaseData;
     private PersonalInformation _personalInformation;
     private Configurations _configurations;
@@ -57,6 +76,7 @@ public partial class MainLayoutPage
 
     [Inject] public IProfileService ProfileService { get; set; } = default!;
     [Inject] private IWebsiteRepo WebsiteRepo { get; set; } = default!;
+    [Inject] private IJSRuntime JsRuntime { get; set; } = default!;
 
     #endregion
 }

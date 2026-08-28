@@ -10,6 +10,7 @@ public interface IProfileService
 
 public class ProfileService : IProfileService
 {
+    // Also read by the pre-paint script in wwwroot/index.html; keep both in sync.
     private const string PreferencesKey = nameof(Preferences);
     private readonly ILocalStorageService _localStorageService;
 

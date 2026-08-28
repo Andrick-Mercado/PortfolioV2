@@ -5,6 +5,27 @@ namespace PersonalPortfolio.Library.Domain;
 
 public static class ThemeManager
 {
+    /// <summary>
+    /// CSS class placed on the html element by the pre-paint script in index.html when the stored
+    /// preference is dark mode. It is also the scope of the theme returned by
+    /// <see cref="GetPreloadDarkTheme" />.
+    /// </summary>
+    public const string PreloadDarkClass = "mud-preload-dark";
+
+    /// <summary>
+    /// Same theme as <see cref="GetMudTheme" /> but the generated CSS variables are scoped to
+    /// <c>:root.mud-preload-dark</c> instead of <c>:root</c>. Rendering it produces a stylesheet that is
+    /// captured by the prerenderer, letting the static snapshot be shown in dark mode before the
+    /// WebAssembly app has booted and can apply the real theme.
+    /// </summary>
+    public static MudTheme GetPreloadDarkTheme(WebsiteTheme websiteTheme)
+    {
+        var theme = GetMudTheme(websiteTheme);
+        theme.PseudoCss.Scope = $"root.{PreloadDarkClass}";
+
+        return theme;
+    }
+
     public static MudTheme GetMudTheme(WebsiteTheme websiteTheme)
     {
         var theme = new MudTheme();
