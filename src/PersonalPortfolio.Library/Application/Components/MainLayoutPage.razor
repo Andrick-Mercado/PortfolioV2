@@ -54,10 +54,16 @@ else
             <MudSpacer/>
             @if (_configurations?.EnableDarkMode ?? false)
             {
-                <MudToggleIconButton Toggled="@IsDarkCurrentTheme" ToggledChanged="ChangeThemeAsync"
+                <MudToggleIconButton Class="mud-preload-dark-hidden" Toggled="@IsDarkCurrentTheme" ToggledChanged="ChangeThemeAsync"
                                      Icon="@Icons.Material.Filled.DarkMode" Color="@Color.Inherit" title="@(IsDarkCurrentTheme ?
                                                                                                               "DarkMode" :
                                                                                                               "LightMode")"
+                                     ToggledIcon="@Icons.Material.Filled.LightMode" ToggledColor="@Color.Inherit"/>
+                @* The prerendered snapshot is always captured in light mode, so the button above is baked into it
+                   showing the light-mode icon. This stand-in replaces it while the pre-paint dark class is applied,
+                   and is hidden again as soon as the app releases that class. *@
+                <MudToggleIconButton Class="mud-preload-dark-only" Toggled="true"
+                                     Icon="@Icons.Material.Filled.DarkMode" Color="@Color.Inherit" title="DarkMode"
                                      ToggledIcon="@Icons.Material.Filled.LightMode" ToggledColor="@Color.Inherit"/>
             }
         </MudAppBar>
