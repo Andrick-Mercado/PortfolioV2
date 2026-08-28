@@ -13,6 +13,21 @@
         html.mud-preload-dark {
             color-scheme: dark;
         }
+
+        /* Colors come from CSS variables, but markup that differs between the two themes has to be
+           swapped as well: elements marked '-only' stand in for the '-hidden' ones while the
+           prerendered snapshot is being shown in dark mode. */
+        html .mud-preload-dark-only {
+            display: none;
+        }
+
+        html.mud-preload-dark .mud-preload-dark-hidden {
+            display: none;
+        }
+
+        html.mud-preload-dark .mud-preload-dark-only {
+            display: inline-flex;
+        }
     </style>
     <script>
         // Runs before the first paint so the prerendered snapshot is shown with the same theme the
