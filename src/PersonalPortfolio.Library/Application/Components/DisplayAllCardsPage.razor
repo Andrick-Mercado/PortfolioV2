@@ -101,7 +101,10 @@ else if (_currentPage?.PageFormat is CardType.Project)
                     <MudCard Elevation="1" Class="rounded-xl d-flex flex-column">
                         @if (string.IsNullOrEmpty(project.ImageUrl) is false)
                         {
-                            <MudCardMedia Image="@project.ImageUrl" Height="180" Class="rounded-t-xl" Style="object-fit:cover;" UserAttributes="@(new Dictionary<string, object> { { "loading", "lazy" } })"/>
+                            @* MudCardMedia paints a CSS background image, which the browser cannot
+                               lazy-load; a real <img> inside MediaFrame can. *@
+                            <MediaFrame Src="@project.ImageUrl" Alt="@project.Title"
+                                        Height="180" Class="rounded-t-xl"/>
                         }
                         <MudCardContent Class="flex-grow-1">
                             @if (string.IsNullOrEmpty(project.ImageUrl))
@@ -185,8 +188,15 @@ else if (_currentPage?.PageFormat is CardType.Pdf)
                     }
                 </MudToolBar>
                 <MudDivider/>
-                <iframe src="@document.EmbedUrl" title="@document.Title" allow="autoplay"
-                        style="display:block; width:100%; height:80vh; border:none;"></iframe>
+                <DeferredEmbed Src="@document.EmbedUrl" Title="@document.Title"
+                               Description="Hosted on Google Drive. The viewer is a few megabytes, so it loads when you scroll here or ask for it."
+                               Height="80vh"
+                               Icon="@IconMapper.GetIcon(document.Icon)"
+                               ActionText="View document"
+                               ActionIcon="@Icons.Material.Filled.Description"
+                               Allow="autoplay"
+                               DownloadUrl="@document.DownloadUrl"
+                               OpenUrl="@document.LearnMoreUrl"/>
             </MudPaper>
         }
     </MudContainer>
